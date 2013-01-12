@@ -7,13 +7,17 @@
 //
 
 #import "Y4AppDelegate.h"
+#import "MainViewController.h"
 
 @implementation Y4AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    MainViewController * viewController = [[MainViewController alloc] init];
+    self.window.rootViewController = viewController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
