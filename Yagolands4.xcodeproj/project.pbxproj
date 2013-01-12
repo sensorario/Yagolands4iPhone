@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
 		17A2C2421686CD370078D4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2411686CD370078D4C6 /* UIKit.framework */; };
 		17A2C2441686CD370078D4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2431686CD370078D4C6 /* Foundation.framework */; };
 		17A2C2461686CD370078D4C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2451686CD370078D4C6 /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		179DEA5316A1EBB800C1AAA7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
+		179DEA5416A1EBB800C1AAA7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
 		17A2C23D1686CD370078D4C6 /* Yagolands4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yagolands4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A2C2411686CD370078D4C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17A2C2431686CD370078D4C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		179DEA5716A1EBC700C1AAA7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				179DEA5316A1EBB800C1AAA7 /* MainViewController.h */,
+				179DEA5416A1EBB800C1AAA7 /* MainViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		17A2C2321686CD370078D4C6 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +127,7 @@
 		17A2C2471686CD370078D4C6 /* Yagolands4 */ = {
 			isa = PBXGroup;
 			children = (
+				179DEA5716A1EBC700C1AAA7 /* ViewControllers */,
 				17A2C2791686CD9E0078D4C6 /* Src */,
 				17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */,
 				17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */,
@@ -279,6 +292,7 @@
 				17A2C24E1686CD370078D4C6 /* main.m in Sources */,
 				17A2C2521686CD370078D4C6 /* Y4AppDelegate.m in Sources */,
 				17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */,
+				179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
