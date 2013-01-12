@@ -21,6 +21,7 @@
 		17A2C2621686CD370078D4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2431686CD370078D4C6 /* Foundation.framework */; };
 		17A2C26A1686CD370078D4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2681686CD370078D4C6 /* InfoPlist.strings */; };
 		17A2C26D1686CD380078D4C6 /* Yagolands4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */; };
+		17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C2771686CD910078D4C6 /* Y4Coordinata.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		17A2C2691686CD370078D4C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17A2C26B1686CD380078D4C6 /* Yagolands4Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yagolands4Tests.h; sourceTree = "<group>"; };
 		17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yagolands4Tests.m; sourceTree = "<group>"; };
+		17A2C2761686CD910078D4C6 /* Y4Coordinata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4Coordinata.h; path = Yagolands4/Y4Coordinata.h; sourceTree = "<group>"; };
+		17A2C2771686CD910078D4C6 /* Y4Coordinata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Coordinata.m; path = Yagolands4/Y4Coordinata.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		17A2C2471686CD370078D4C6 /* Yagolands4 */ = {
 			isa = PBXGroup;
 			children = (
+				17A2C2791686CD9E0078D4C6 /* Src */,
 				17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */,
 				17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */,
 				17A2C2481686CD370078D4C6 /* Supporting Files */,
@@ -150,6 +154,16 @@
 				17A2C2681686CD370078D4C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17A2C2791686CD9E0078D4C6 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				17A2C2761686CD910078D4C6 /* Y4Coordinata.h */,
+				17A2C2771686CD910078D4C6 /* Y4Coordinata.m */,
+			);
+			name = Src;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +278,7 @@
 			files = (
 				17A2C24E1686CD370078D4C6 /* main.m in Sources */,
 				17A2C2521686CD370078D4C6 /* Y4AppDelegate.m in Sources */,
+				17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +445,7 @@
 				17A2C2721686CD380078D4C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17A2C2731686CD380078D4C6 /* Build configuration list for PBXNativeTarget "Yagolands4Tests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +454,7 @@
 				17A2C2751686CD380078D4C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
