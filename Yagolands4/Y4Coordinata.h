@@ -21,4 +21,7 @@
 - (void)moveRightUp;
 - (void)moveCenter;
 
+- (NSInteger)getX;
+- (NSInteger)getY;
+
 @end

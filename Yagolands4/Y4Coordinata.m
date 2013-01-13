@@ -14,6 +14,16 @@
     return self;
 }
 
+- (NSInteger)getX
+{
+    return coordX;
+}
+
+- (NSInteger)getY
+{
+    return coordY;
+}
+
 - (void)moveLeft
 {
     coordX = coordX - 1;
