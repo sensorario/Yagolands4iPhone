@@ -96,8 +96,22 @@
 
 - (void)imageTapped: (id)sender
 {
-    UITapGestureRecognizer * gesture = (UITapGestureRecognizer *)sender;
-    NSLog(@"imageTapped. %d", gesture.view.tag);
+    UITapGestureRecognizer * gesture = nil;
+    NSString * immaginePari = @"cella.png";
+    NSString * immagineDispari = @"cella-cliccata.png";
+    NSString * immagine = nil;
+    Y4ImageView * imageView = nil;
+    UIImage * image = nil;
+    BOOL isTappetPairTimes;
+    
+    gesture = (UITapGestureRecognizer *)sender;
+    imageView = (Y4ImageView *)gesture.view;
+    isTappetPairTimes = imageView.numeroTappate % 2;
+    immagine = isTappetPairTimes ? immaginePari : immagineDispari;
+    image = [UIImage imageNamed:immagine];
+    
+    [imageView setImage:image];
+    [imageView incrementaTappate];
 }
 
 - (void)didReceiveMemoryWarning

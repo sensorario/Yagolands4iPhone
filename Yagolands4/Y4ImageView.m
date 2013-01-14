@@ -20,4 +20,9 @@
     return self;
 }
 
+- (void)incrementaTappate
+{
+    ++self.numeroTappate;
+}
+
 @end
