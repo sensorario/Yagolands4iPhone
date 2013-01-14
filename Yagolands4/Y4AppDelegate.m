@@ -7,8 +7,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    MainViewController * viewController = [[MainViewController alloc] init];
-    self.window.rootViewController = viewController;
+    /* Definisco il mio rootViewController. */
+    self.window.rootViewController = [[MainViewController alloc] init];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
