@@ -6,5 +6,6 @@
 @property (nonatomic) NSInteger numeroTappate;
 
 - (void)incrementaTappate;
+- (void)toggleImage;
 
 @end

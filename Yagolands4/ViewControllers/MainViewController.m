@@ -87,30 +87,18 @@
     /* Disegno dell'immagine. */
     Y4ImageView * imageView = [[Y4ImageView alloc] init];
     [imageView setTag:++identificatoreCella];
-    [imageView setImage:[UIImage imageNamed:@"cella.png"]];
     [imageView setFrame:CGRectMake([self posizioneX] + offsetSinistro, [self posizioneY] + offsetAlto, larghezzaCella, larghezzaCella)];
     [imageView setUserInteractionEnabled:TRUE];
-    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)]];
+    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleImage:)]];
     [self.view addSubview:imageView];
 }
 
-- (void)imageTapped: (id)sender
+- (void)toggleImage: (id)sender
 {
-    UITapGestureRecognizer * gesture = nil;
-    NSString * immaginePari = @"cella.png";
-    NSString * immagineDispari = @"cella-cliccata.png";
-    NSString * immagine = nil;
-    Y4ImageView * imageView = nil;
-    UIImage * image = nil;
-    BOOL isTappetPairTimes;
+    UITapGestureRecognizer * gesture = (UITapGestureRecognizer *)sender;
+    Y4ImageView * imageView = (Y4ImageView *)gesture.view;
     
-    gesture = (UITapGestureRecognizer *)sender;
-    imageView = (Y4ImageView *)gesture.view;
-    isTappetPairTimes = imageView.numeroTappate % 2;
-    immagine = isTappetPairTimes ? immaginePari : immagineDispari;
-    image = [UIImage imageNamed:immagine];
-    
-    [imageView setImage:image];
+    [imageView toggleImage];
     [imageView incrementaTappate];
 }
 

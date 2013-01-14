@@ -1,14 +1,9 @@
-//
-//  Y4ImageView.m
-//  Yagolands4
-//
-//  Created by Simone Gentili on 13/01/13.
-//  Copyright (c) 2013 SENSORARIO. All rights reserved.
-//
-
 #import "Y4ImageView.h"
 
-@implementation Y4ImageView
+@implementation Y4ImageView {
+    NSString * pari;
+    NSString * dispari;
+}
 
 @synthesize tag;
 
@@ -16,6 +11,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        pari = @"cella.png";
+        dispari = @"cella-cliccata.png";
+        [self setImage:[UIImage imageNamed:pari]];
     }
     return self;
 }
@@ -23,6 +21,12 @@
 - (void)incrementaTappate
 {
     ++self.numeroTappate;
+}
+
+- (void)toggleImage
+{
+    NSString * immagine = self.numeroTappate%2==0?dispari:pari;
+    [self setImage:[UIImage imageNamed:immagine]];
 }
 
 @end
