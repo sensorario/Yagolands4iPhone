@@ -87,7 +87,7 @@
     /* Disegno dell'immagine. */
     Y4ImageView * imageView = [[Y4ImageView alloc] init];
     [imageView setTag:++identificatoreCella];
-    [imageView setFrame:CGRectMake([self posizioneX] + offsetSinistro, [self posizioneY] + offsetAlto, larghezzaCella, larghezzaCella)];
+    [imageView setFrame:CGRectMake([self posizioneX]+offsetSinistro,self.posizioneY+offsetAlto,larghezzaCella,larghezzaCella)];
     [imageView setUserInteractionEnabled:TRUE];
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleImage:)]];
     [self.view addSubview:imageView];

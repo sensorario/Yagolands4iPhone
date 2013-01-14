@@ -6,6 +6,7 @@
 }
 
 @synthesize tag;
+@synthesize numeroTappate;
 
 - (id)initWithFrame:(CGRect)frame
 {
