@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
 		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
 		179DEA5916A1F32F00C1AAA7 /* cella.png in Resources */ = {isa = PBXBuildFile; fileRef = 179DEA5816A1F32F00C1AAA7 /* cella.png */; };
 		17A2C2421686CD370078D4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2411686CD370078D4C6 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
+		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
 		179DEA5316A1EBB800C1AAA7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
 		179DEA5416A1EBB800C1AAA7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
 		179DEA5816A1F32F00C1AAA7 /* cella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cella.png; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 			children = (
 				179DEA5316A1EBB800C1AAA7 /* MainViewController.h */,
 				179DEA5416A1EBB800C1AAA7 /* MainViewController.m */,
+				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
+				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				17A2C2521686CD370078D4C6 /* Y4AppDelegate.m in Sources */,
 				17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */,
 				179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */,
+				177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

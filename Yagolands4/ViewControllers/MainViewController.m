@@ -1,12 +1,5 @@
-    //
-    //  MainViewController.m
-    //  Yagolands4
-    //
-    //  Created by Simone Gentili on 12/01/13.
-    //  Copyright (c) 2013 SENSORARIO. All rights reserved.
-    //
-
 #import "MainViewController.h"
+#import "Y4ImageView.h"
 #import "Y4Coordinata.h"
 
 @interface MainViewController ()
@@ -17,6 +10,7 @@
 
 @synthesize posizioneX;
 @synthesize posizioneY;
+@synthesize identificatoreCella;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,14 +39,14 @@
 
 - (void)disegnaLeMieTerreCon: (Y4Coordinata *)centro
 {
-    [self setPosizioneX:0];
+    [self setPosizioneX:40];
     [self setPosizioneY:180];
     [self disegnaTerreniCon:centro];
 }
 
 - (void)disegnaLeTerreNemicheCon: (Y4Coordinata *)centro
 {
-    [self setPosizioneX:320];
+    [self setPosizioneX:340];
     [self setPosizioneY:120];
     [self disegnaTerreniCon:centro];
 }
@@ -65,13 +59,13 @@
     [self aggiungiCellaIn:centro];
     [centro moveLeftDown];
     [self aggiungiCellaIn:centro];
-    [centro moveRight];
-    [self aggiungiCellaIn:centro];
-    [centro moveRightUp];
+    [centro moveLeft];
     [self aggiungiCellaIn:centro];
     [centro moveLeftUp];
     [self aggiungiCellaIn:centro];
-    [centro moveLeft];
+    [centro moveRightUp];
+    [self aggiungiCellaIn:centro];
+    [centro moveRight];
     [self aggiungiCellaIn:centro];
 }
 
@@ -91,28 +85,24 @@
     }
     
     /* Disegno dell'immagine. */
-    UIImageView * imageView = [[UIImageView alloc] init];
-    
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc]
-                                    initWithTarget:self
-                                    action:@selector(imageTapped)];
-    [imageView addGestureRecognizer:tap];
-    imageView.userInteractionEnabled = TRUE;
-    
+    Y4ImageView * imageView = [[Y4ImageView alloc] init];
+    [imageView setTag:++identificatoreCella];
     [imageView setImage:[UIImage imageNamed:@"cella.png"]];
     [imageView setFrame:CGRectMake([self posizioneX] + offsetSinistro, [self posizioneY] + offsetAlto, larghezzaCella, larghezzaCella)];
+    [imageView setUserInteractionEnabled:TRUE];
+    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)]];
     [self.view addSubview:imageView];
 }
 
-- (void)imageTapped
+- (void)imageTapped: (id)sender
 {
-    NSLog(@"imageTapped");
+    UITapGestureRecognizer * gesture = (UITapGestureRecognizer *)sender;
+    NSLog(@"imageTapped. %d", gesture.view.tag);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-        // Dispose of any resources that can be recreated.
 }
 
 @end
