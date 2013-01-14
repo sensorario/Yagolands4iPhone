@@ -18,15 +18,11 @@
     return self;
 }
 
-- (void)incrementaTappate
-{
-    ++self.numeroTappate;
-}
-
 - (void)toggleImage
 {
     NSString * immagine = self.numeroTappate%2==0?dispari:pari;
-    [self setImage:[UIImage imageNamed:immagine]];
+    [self setImage:[UIImage imageNamed:immagine]];    
+    ++self.numeroTappate;
 }
 
 @end

@@ -1,11 +1,3 @@
-//
-//  Y4Coordinata.h
-//  Yagolands4
-//
-//  Created by Simone Gentili on 23/12/12.
-//  Copyright (c) 2012 SENSORARIO. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface Y4Coordinata : NSObject

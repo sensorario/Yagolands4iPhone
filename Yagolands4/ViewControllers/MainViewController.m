@@ -26,7 +26,7 @@
     [super viewDidLoad];
     NSLog(@"Hai caricato il MainViewController");
     
-    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 440, 40)];
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
     [label setText:@"Wellcome to Yagolands4iPhone"];
     [label setBackgroundColor:[UIColor redColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
@@ -46,8 +46,8 @@
 
 - (void)disegnaLeTerreNemicheCon: (Y4Coordinata *)centro
 {
-    [self setPosizioneX:340];
-    [self setPosizioneY:120];
+    [self setPosizioneX:200];
+    [self setPosizioneY:340];
     [self disegnaTerreniCon:centro];
 }
 
@@ -95,11 +95,7 @@
 
 - (void)toggleImage: (id)sender
 {
-    UITapGestureRecognizer * gesture = (UITapGestureRecognizer *)sender;
-    Y4ImageView * imageView = (Y4ImageView *)gesture.view;
-    
-    [imageView toggleImage];
-    [imageView incrementaTappate];
+    [(Y4ImageView *)((UITapGestureRecognizer *)sender).view toggleImage];
 }
 
 - (void)didReceiveMemoryWarning

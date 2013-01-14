@@ -92,13 +92,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177EC57816A3B7B100D7FE62 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
+				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
+			);
+			name = CustomComponents;
+			sourceTree = "<group>";
+		};
+		177EC57916A3B80C00D7FE62 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */,
+				17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		179DEA5716A1EBC700C1AAA7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				179DEA5316A1EBB800C1AAA7 /* MainViewController.h */,
 				179DEA5416A1EBB800C1AAA7 /* MainViewController.m */,
-				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
-				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -145,12 +161,12 @@
 		17A2C2471686CD370078D4C6 /* Yagolands4 */ = {
 			isa = PBXGroup;
 			children = (
+				177EC57816A3B7B100D7FE62 /* CustomComponents */,
+				17A2C2791686CD9E0078D4C6 /* Components */,
 				179DEA5A16A1F33700C1AAA7 /* Images */,
 				179DEA5716A1EBC700C1AAA7 /* ViewControllers */,
-				17A2C2791686CD9E0078D4C6 /* Src */,
-				17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */,
-				17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */,
 				17A2C2481686CD370078D4C6 /* Supporting Files */,
+				177EC57916A3B80C00D7FE62 /* Delegate */,
 			);
 			path = Yagolands4;
 			sourceTree = "<group>";
@@ -188,13 +204,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		17A2C2791686CD9E0078D4C6 /* Src */ = {
+		17A2C2791686CD9E0078D4C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				17A2C2761686CD910078D4C6 /* Y4Coordinata.h */,
 				17A2C2771686CD910078D4C6 /* Y4Coordinata.m */,
 			);
-			name = Src;
+			name = Components;
 			path = ..;
 			sourceTree = "<group>";
 		};

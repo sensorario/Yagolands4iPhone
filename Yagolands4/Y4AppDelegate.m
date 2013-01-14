@@ -1,11 +1,3 @@
-//
-//  Y4AppDelegate.m
-//  Yagolands4
-//
-//  Created by Simone Gentili on 23/12/12.
-//  Copyright (c) 2012 SENSORARIO. All rights reserved.
-//
-
 #import "Y4AppDelegate.h"
 #import "MainViewController.h"
 
