@@ -21,6 +21,7 @@
 
 - (void)toggleImage
 {
+    /* Gestisco il cambio dell'immagine. */
     NSString * immagine = self.numeroTappate%2==0?dispari:pari;
     [self setImage:[UIImage imageNamed:immagine]];
     ++self.numeroTappate;
@@ -31,17 +32,7 @@
     [request setHTTPMethod:@"GET"];
     NSURLResponse *response;
     NSError *err;
-    [NSURLConnection sendSynchronousRequest:request
-                          returningResponse:&response
-                                      error:&err];
-
-    /*
-     1xx - Informational responses,
-     2xx - success
-     3xx - Redirection
-     4xx - Client error
-     5xx - Server error
-     */
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
 }
 
 @end
