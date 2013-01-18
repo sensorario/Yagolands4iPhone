@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1768ADE716A8396F00009763 /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768ADE616A8396F00009763 /* CellViewController.m */; };
+		176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176AE4C816A921E200BF523E /* StartToBuildViewController.m */; };
 		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
 		177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 177EC57516A3A49E00D7FE62 /* cella-cliccata.png */; };
 		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1768ADE516A8396F00009763 /* CellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellViewController.h; path = ViewControllers/CellViewController.h; sourceTree = "<group>"; };
+		1768ADE616A8396F00009763 /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellViewController.m; path = ViewControllers/CellViewController.m; sourceTree = "<group>"; };
+		176AE4C716A921E200BF523E /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
+		176AE4C816A921E200BF523E /* StartToBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartToBuildViewController.m; sourceTree = "<group>"; };
 		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
 		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
 		177EC57516A3A49E00D7FE62 /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cella-cliccata.png"; sourceTree = "<group>"; };
@@ -115,6 +121,10 @@
 			children = (
 				179DEA5316A1EBB800C1AAA7 /* MainViewController.h */,
 				179DEA5416A1EBB800C1AAA7 /* MainViewController.m */,
+				1768ADE516A8396F00009763 /* CellViewController.h */,
+				1768ADE616A8396F00009763 /* CellViewController.m */,
+				176AE4C716A921E200BF523E /* StartToBuildViewController.h */,
+				176AE4C816A921E200BF523E /* StartToBuildViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -331,6 +341,8 @@
 				17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */,
 				179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */,
 				177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */,
+				1768ADE716A8396F00009763 /* CellViewController.m in Sources */,
+				176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

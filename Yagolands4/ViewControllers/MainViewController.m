@@ -1,4 +1,5 @@
 #import "MainViewController.h"
+#import "CellViewController.h"
 #import "Y4ImageView.h"
 #import "Y4Coordinata.h"
 
@@ -16,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-            // Custom initialization
+        [self setTitle:@"Yagolands"];
     }
     return self;
 }
@@ -40,14 +41,14 @@
 - (void)disegnaLeMieTerreCon: (Y4Coordinata *)centro
 {
     [self setPosizioneX:40];
-    [self setPosizioneY:180];
+    [self setPosizioneY:140];
     [self disegnaTerreniCon:centro];
 }
 
 - (void)disegnaLeTerreNemicheCon: (Y4Coordinata *)centro
 {
     [self setPosizioneX:200];
-    [self setPosizioneY:340];
+    [self setPosizioneY:300];
     [self disegnaTerreniCon:centro];
 }
 
@@ -95,7 +96,17 @@
 
 - (void)toggleImage: (id)sender
 {
-    [(Y4ImageView *)((UITapGestureRecognizer *)sender).view toggleImage];
+    /* Recupero la view da caricare */
+    Y4ImageView * view = (Y4ImageView *)((UITapGestureRecognizer *)sender).view;
+    
+    /* Inversione dell'immagine. */
+    [view toggleImage];
+    
+    /* Carico il ViewController della cella. */
+    CellViewController * cell = nil;
+    cell = [[CellViewController alloc] init];
+    [cell setIdCell:view.tag];
+    [self.navigationController pushViewController:cell animated:TRUE];
 }
 
 - (void)didReceiveMemoryWarning
