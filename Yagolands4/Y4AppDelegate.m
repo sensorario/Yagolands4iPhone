@@ -3,10 +3,18 @@
 
 @implementation Y4AppDelegate
 
+- (float)timeLeftToBuildCentroDelVillaggio
+{
+    NSDate * now = [[NSDate alloc] init];
+    return [self.endJobCentroDelVillaggio timeIntervalSinceDate:now];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    [self setBooCentroDelVillaggio:false];
+    
     /* Definisco il mio rootViewController. */
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     

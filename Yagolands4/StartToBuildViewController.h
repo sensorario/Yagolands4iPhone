@@ -10,4 +10,6 @@
 
 @interface StartToBuildViewController : UIViewController
 
+- (void)startToBuildCentroDelVillaggio;
+
 @end
