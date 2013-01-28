@@ -82,14 +82,14 @@
     [self.view addSubview:label];
 }
 
-- (void)touchDown
+- (void)costruisciCentroDelVillaggio
 {
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
     if(self.delegate.idCentroDelVillaggio == 0) {
-        NSLog(@"Imposto l'id del centro del villaggio a %d.", self.idCell);
+        NSLog(@"Imposto l'id del Centro del Villaggio a %d.", self.idCell);
         self.delegate.idCentroDelVillaggio = self.idCell;
     } else {
-        NSLog(@"Id centro del villaggio = %d.", self.delegate.idCentroDelVillaggio);
+        NSLog(@"Id Centro del Villaggio = %d.", self.delegate.idCentroDelVillaggio);
     }
     [self.navigationController pushViewController:controller animated:true];
 }
@@ -98,7 +98,7 @@
 {
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
     if(self.delegate.idCaserma == 0) {
-        NSLog(@"Imposto l'id della cella con la caserma a %d.", self.idCell);
+        NSLog(@"Imposto l'id della cella con la Caserma a %d.", self.idCell);
         self.delegate.idCaserma = self.idCell;
     } else {
         NSLog(@"La Caserma ha id = %d.", self.delegate.idCaserma);
@@ -106,11 +106,13 @@
     [self.navigationController pushViewController:controller animated:true];
 }
 
-- (void)targetMethod:(NSTimer *)theTimer {
+- (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
     if([self isCentroDelVillaggioCostruito]) {
+        NSLog(@"Ho terminato di costruire il centro del villaggio.");
         [self.timer invalidate];
         self.timer = nil;
     } else {
+        NSLog(@"Centro del villaggio costruito in %d.", (int)self.delegate.timeLeftToBuildCentroDelVillaggio);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];
     }
@@ -128,7 +130,7 @@
 {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
-                                           selector:@selector(targetMethod:)
+                                           selector:@selector(threadCostruisciCentroDelVillaggio:)
                                            userInfo:nil
                                             repeats:YES];
 }
@@ -164,7 +166,7 @@
     [self.aButton setTitle:@"Centro del Villaggio"
                   forState:UIControlStateNormal];
     [self.aButton addTarget:self
-                     action:@selector(touchDown)
+                     action:@selector(costruisciCentroDelVillaggio)
            forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.aButton];
 }
@@ -188,7 +190,7 @@
 
 - (BOOL)centroDelVillaggionExists
 {
-    return ![self centroDelVillaggionExists];
+    return ![self centroDelVillaggionNotExists];
 }
 
 - (BOOL)templioNotExists
