@@ -2,28 +2,16 @@
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
 
-@interface CellViewController () {
-    NSTimer * timer;
-}
-
-@property (nonatomic) NSTimer * timer;
+@interface CellViewController ()
 
 @end
 
 @implementation CellViewController
 
-@synthesize timer;
-
-- (void)setIdCell:(int)idCell
-{    
-    [self setTitle:@"Landa desolata"];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setTitle:@"Cella"];
         [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
     }
     return self;
@@ -33,13 +21,18 @@
 {
     [self mostraTestiDescrittivi];
     [self mostroAzioniDisponibili];
+    
+    if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
+        [self setTitle:@"Centro del Villaggio"];
+    } else {
+        [self setTitle:@"Landa desolata"];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -57,15 +50,16 @@
     [self showLabelPuoiCostruire];
     
     if([self centroDelVillaggionNotExists]) {
-        [self showButton];
+        [self mostraBottonePerCostruireIlCentroDelVillaggio];
+    } else if ([self possoCostruireLaCaserma]) {
+        [self mostraBottonePerCostruireLaCaserma];
     } else {
         if([self buttonExists]) {
             [self removeButton];
             [self showLabelInCostruzione];
             [self startTimer];
         }
-    }
-    
+    }    
 }
 
 # pragma mark Utility methods
@@ -91,13 +85,31 @@
 - (void)touchDown
 {
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
+    if(self.delegate.idCentroDelVillaggio == 0) {
+        NSLog(@"Imposto l'id del centro del villaggio a %d.", self.idCell);
+        self.delegate.idCentroDelVillaggio = self.idCell;
+    } else {
+        NSLog(@"Id centro del villaggio = %d.", self.delegate.idCentroDelVillaggio);
+    }
+    [self.navigationController pushViewController:controller animated:true];
+}
+
+- (void)costruisciCaserma
+{
+    StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
+    if(self.delegate.idCaserma == 0) {
+        NSLog(@"Imposto l'id della cella con la caserma a %d.", self.idCell);
+        self.delegate.idCaserma = self.idCell;
+    } else {
+        NSLog(@"La Caserma ha id = %d.", self.delegate.idCaserma);
+    }
     [self.navigationController pushViewController:controller animated:true];
 }
 
 - (void)targetMethod:(NSTimer *)theTimer {
     if([self isCentroDelVillaggioCostruito]) {
-        [timer invalidate];
-        timer = nil;
+        [self.timer invalidate];
+        self.timer = nil;
     } else {
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];
@@ -114,7 +126,7 @@
 
 - (void)startTimer
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
                                            selector:@selector(targetMethod:)
                                            userInfo:nil
@@ -145,7 +157,7 @@
     [self.view addSubview:self.labelInContruzione];
 }
 
-- (void)showButton
+- (void)mostraBottonePerCostruireIlCentroDelVillaggio
 {
     self.aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButton setFrame:CGRectMake(20,360,280,40)];
@@ -157,9 +169,36 @@
     [self.view addSubview:self.aButton];
 }
 
+- (void)mostraBottonePerCostruireLaCaserma
+{
+    self.aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.aButton setFrame:CGRectMake(20,360,280,40)];
+    [self.aButton setTitle:@"Caserma"
+                  forState:UIControlStateNormal];
+    [self.aButton addTarget:self
+                     action:@selector(costruisciCaserma)
+           forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:self.aButton];
+}
+
 - (BOOL)centroDelVillaggionNotExists
 {
     return self.delegate.booCentroDelVillaggio == 0;
+}
+
+- (BOOL)centroDelVillaggionExists
+{
+    return ![self centroDelVillaggionExists];
+}
+
+- (BOOL)templioNotExists
+{
+    return YES;
+}
+
+- (BOOL)possoCostruireLaCaserma
+{
+    return [self centroDelVillaggionExists] && [self isCentroDelVillaggioCostruito] && [self templioNotExists];
 }
 
 @end

@@ -1,11 +1,3 @@
-    //
-    //  Yagolands4Tests.m
-    //  Yagolands4Tests
-    //
-    //  Created by Simone Gentili on 23/12/12.
-    //  Copyright (c) 2012 SENSORARIO. All rights reserved.
-    //
-
 #import "Yagolands4Tests.h"
 #import "Y4Coordinata.h"
 
@@ -14,14 +6,10 @@
 - (void)setUp
 {
     [super setUp];
-    
-        // Set-up code here.
 }
 
 - (void)tearDown
 {
-        // Tear-down code here.
-    
     [super tearDown];
 }
 

@@ -13,8 +13,8 @@
     
     if(delegate.booCentroDelVillaggio == 0) {
         NSLog(@"Inizio a costruire il centro del villaggio.");
-        [delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:5]];
-        [delegate setBooCentroDelVillaggio:true];
+        [delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:10]];
+        [delegate setBooCentroDelVillaggio:true];        
     } else {
         NSLog(@"La costruzione del centro del villaggio terminerà alle %@", delegate.endJobCentroDelVillaggio);
         NSLog(@"Mancano ancora %f secondi", [delegate timeLeftToBuildCentroDelVillaggio]);

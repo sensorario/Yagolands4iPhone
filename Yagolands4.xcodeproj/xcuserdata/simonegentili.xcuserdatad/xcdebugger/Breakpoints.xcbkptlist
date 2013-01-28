@@ -20,26 +20,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "380871066.506909"
+         filePath = "Yagolands4/ViewControllers/MainViewController.m"
+         timestampString = "381065801.665263"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-mostroAzioniDisponibili"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "380871066.506909"
+         filePath = "Yagolands4/Y4ImageView.m"
+         timestampString = "381066319.437422"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
-         landmarkName = "-mostroAzioniDisponibili"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-setImageOfCentroDelVillaggio"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

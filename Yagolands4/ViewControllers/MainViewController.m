@@ -18,14 +18,30 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setTitle:@"Yagolands"];
+        [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
     }
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"- (void)viewWillAppear:(BOOL)animated");
+    
+    NSLog(@"self.delegate.idCentroDelVillaggio = %d", self.delegate.idCentroDelVillaggio);
+    
+    if(self.delegate.idCentroDelVillaggio > 0) {
+        NSInteger tag = self.delegate.idCentroDelVillaggio;
+        NSLog(@"Cella da colorare = %@", [self.view viewWithTag:tag]);
+        [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCentroDelVillaggio];
+    }
+    
+}
+
 - (void)viewDidLoad
 {
+    NSLog(@"- (void)viewDidLoad");
+    
     [super viewDidLoad];
-    NSLog(@"Hai caricato il MainViewController");
     
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
     [label setText:@"Wellcome to Yagolands4iPhone"];
@@ -102,10 +118,15 @@
     /* Inversione dell'immagine. */
     [view toggleImage];
     
+    Y4AppDelegate * delegate = (Y4AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"idCentroDelVillaggio: %d", delegate.idCentroDelVillaggio);
+    
     /* Carico il ViewController della cella. */
     CellViewController * cell = nil;
     cell = [[CellViewController alloc] init];
     [cell setIdCell:view.tag];
+    NSLog(@"ID Cella = %d.", view.tag);
+    NSLog(@"ID Cella = %d.", cell.idCell);
     [self.navigationController pushViewController:cell animated:TRUE];
 }
 

@@ -28,6 +28,7 @@
 		17A2C26A1686CD370078D4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2681686CD370078D4C6 /* InfoPlist.strings */; };
 		17A2C26D1686CD380078D4C6 /* Yagolands4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */; };
 		17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C2771686CD910078D4C6 /* Y4Coordinata.m */; };
+		17EE6A2C16B690DF00A75B8E /* centro_del_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yagolands4Tests.m; sourceTree = "<group>"; };
 		17A2C2761686CD910078D4C6 /* Y4Coordinata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4Coordinata.h; path = Yagolands4/Y4Coordinata.h; sourceTree = "<group>"; };
 		17A2C2771686CD910078D4C6 /* Y4Coordinata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Coordinata.m; path = Yagolands4/Y4Coordinata.m; sourceTree = "<group>"; };
+		17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centro_del_villaggio.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				177EC57516A3A49E00D7FE62 /* cella-cliccata.png */,
+				17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */,
 				179DEA5816A1F32F00C1AAA7 /* cella.png */,
 			);
 			name = Images;
@@ -302,6 +305,7 @@
 				17A2C2581686CD370078D4C6 /* Default-568h@2x.png in Resources */,
 				179DEA5916A1F32F00C1AAA7 /* cella.png in Resources */,
 				177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */,
+				17EE6A2C16B690DF00A75B8E /* centro_del_villaggio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
