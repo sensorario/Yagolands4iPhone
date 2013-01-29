@@ -54,10 +54,10 @@
     } else if ([self possoCostruireLaCaserma]) {
         [self mostraBottonePerCostruireLaCaserma];
     } else {
-        if([self buttonExists]) {
-            [self removeButton];
-            [self showLabelInCostruzione];
-            [self startTimer];
+        if([self buttonToBuildCentroDelVillaggioExists]) {
+            [self removeButtonForBuildCentroDelVillaggio];
+            [self showLabelCentroDelVillaggioInCostruzione];
+            [self startTimerToBuildCentroDelVillaggio];
         }
     }    
 }
@@ -108,7 +108,7 @@
 
 - (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
     if([self isCentroDelVillaggioCostruito]) {
-        NSLog(@"Ho terminato di costruire il centro del villaggio.");
+        NSLog(@"Ho terminato di costruire il Centro del Villaggio.");
         [self.timer invalidate];
         self.timer = nil;
     } else {
@@ -120,13 +120,14 @@
 
 - (void)showLabelPuoiCostruire
 {
+    NSLog(@"Mostro la label che dice che puoi costruire.");
     UILabel * labelCostruzioni = [[UILabel alloc] initWithFrame:CGRectMake(20, 320, 280, 40)];
     [labelCostruzioni setTextAlignment:NSTextAlignmentLeft];
     [labelCostruzioni setText:@"Che cosa puoi costruire:"];
     [self.view addSubview:labelCostruzioni];
 }
 
-- (void)startTimer
+- (void)startTimerToBuildCentroDelVillaggio
 {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                              target:self
@@ -140,18 +141,18 @@
     return self.delegate.timeLeftToBuildCentroDelVillaggio <= 0;
 }
 
-- (BOOL)buttonExists
+- (BOOL)buttonToBuildCentroDelVillaggioExists
 {
     return self.aButton != nil;
 }
 
-- (void)removeButton
+- (void)removeButtonForBuildCentroDelVillaggio
 {
     [self.aButton removeFromSuperview];
     self.aButton = nil;
 }
 
-- (void)showLabelInCostruzione
+- (void)showLabelCentroDelVillaggioInCostruzione
 {
     self.labelInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
     [self.labelInContruzione setTextAlignment:NSTextAlignmentLeft];
@@ -185,7 +186,13 @@
 
 - (BOOL)centroDelVillaggionNotExists
 {
-    return self.delegate.booCentroDelVillaggio == 0;
+    BOOL centroDelVillaggioNotExists = self.delegate.booCentroDelVillaggio == 0;
+    if(centroDelVillaggioNotExists == YES) {
+        NSLog(@"Il centro del villaggio non esiste.");
+    } else {
+        NSLog(@"Il centro del villaggio esiste.");
+    }
+    return centroDelVillaggioNotExists;
 }
 
 - (BOOL)centroDelVillaggionExists
