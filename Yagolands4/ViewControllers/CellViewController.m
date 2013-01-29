@@ -59,28 +59,25 @@
 {
     [self showLabelPuoiCostruire];
     
+    /* Centro del Villaggio. */
     if([self centroDelVillaggionNotExists]) {
         [self mostraBottonePerCostruireIlCentroDelVillaggio];
-    } else {
-        if([self buttonToBuildCentroDelVillaggioExists]) {
-            [self removeButtonForBuildCentroDelVillaggio];
-            [self showLabelCentroDelVillaggioInCostruzione];
-        }
+    }
+    if((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
+        [self removeButtonForBuildCentroDelVillaggio];
+        [self showLabelCentroDelVillaggioInCostruzione];
     }
     
-    if([self isCentroDelVillaggioCostruito]) {
-        if ([self possoCostruireLaCaserma]) {
+    /* Caserma. */
+    if([self centroDelVillaggionExists] && [self isCentroDelVillaggioCostruito]) {
+        if(!(self.delegate.idCaserma > 0)) {
             [self mostraBottonePerCostruireLaCaserma];
         }
-    } else {
-        if([self buttonToBuildCasermaExists]) {
-            [self removeButtonForBuildCaserma];
-            [self showLabelCasermaInCostruzione];
-        }
     }
-    
-    /* } else if ([self possoCostruireLaCaserma]) {
-     [self mostraBottonePerCostruireLaCaserma]; */
+    if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
+        [self removeButtonForBuildCaserma];
+        [self showLabelCasermaInCostruzione];
+    }
 }
 
 # pragma mark Utility methods
@@ -168,10 +165,10 @@
 {
     NSLog(@"startTimerToBuildCaserma");
     self.timerCaserma = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                                    target:self
-                                                                  selector:@selector(threadCostruisciCaserma:)
-                                                                  userInfo:nil
-                                                                   repeats:YES];
+                                                         target:self
+                                                       selector:@selector(threadCostruisciCaserma:)
+                                                       userInfo:nil
+                                                        repeats:YES];
 }
 
 - (BOOL)isCentroDelVillaggioCostruito
@@ -226,11 +223,8 @@
 {
     self.aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButton setFrame:CGRectMake(20,360,280,40)];
-    [self.aButton setTitle:@"Centro del Villaggio"
-                  forState:UIControlStateNormal];
-    [self.aButton addTarget:self
-                     action:@selector(costruisciCentroDelVillaggio)
-           forControlEvents:UIControlEventTouchDown];
+    [self.aButton setTitle:@"Centro del Villaggio" forState:UIControlStateNormal];
+    [self.aButton addTarget:self action:@selector(costruisciCentroDelVillaggio) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.aButton];
 }
 
@@ -238,23 +232,14 @@
 {
     self.aButtonToBuildCaserma = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButtonToBuildCaserma setFrame:CGRectMake(20,360,280,40)];
-    [self.aButtonToBuildCaserma setTitle:@"Caserma"
-                  forState:UIControlStateNormal];
-    [self.aButtonToBuildCaserma addTarget:self
-                     action:@selector(costruisciCaserma)
-           forControlEvents:UIControlEventTouchDown]; // */
+    [self.aButtonToBuildCaserma setTitle:@"Caserma" forState:UIControlStateNormal];
+    [self.aButtonToBuildCaserma addTarget:self action:@selector(costruisciCaserma) forControlEvents:UIControlEventTouchDown]; // */
     [self.view addSubview:self.aButtonToBuildCaserma];
 }
 
 - (BOOL)centroDelVillaggionNotExists
 {
-    BOOL centroDelVillaggioNotExists = self.delegate.booCentroDelVillaggio == 0;
-    if(centroDelVillaggioNotExists == YES) {
-        NSLog(@"Il centro del villaggio non esiste.");
-    } else {
-        NSLog(@"Il centro del villaggio esiste.");
-    }
-    return centroDelVillaggioNotExists;
+    return self.delegate.booCentroDelVillaggio == 0;
 }
 
 - (BOOL)centroDelVillaggionExists
@@ -262,14 +247,11 @@
     return ![self centroDelVillaggionNotExists];
 }
 
-- (BOOL)templioNotExists
-{
-    return YES;
-}
-
 - (BOOL)possoCostruireLaCaserma
 {
-    return [self centroDelVillaggionExists] && [self isCentroDelVillaggioCostruito] && [self templioNotExists];
+    return
+    [self centroDelVillaggionExists] &&
+    [self isCentroDelVillaggioCostruito];
 }
 
 @end

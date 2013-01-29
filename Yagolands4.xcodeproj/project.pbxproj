@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17432E7A16B8714700613405 /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 17432E7916B8714700613405 /* caserma.png */; };
 		1768ADE716A8396F00009763 /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768ADE616A8396F00009763 /* CellViewController.m */; };
 		176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176AE4C816A921E200BF523E /* StartToBuildViewController.m */; };
 		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17432E7916B8714700613405 /* caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caserma.png; sourceTree = "<group>"; };
 		1768ADE516A8396F00009763 /* CellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellViewController.h; path = ViewControllers/CellViewController.h; sourceTree = "<group>"; };
 		1768ADE616A8396F00009763 /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellViewController.m; path = ViewControllers/CellViewController.m; sourceTree = "<group>"; };
 		176AE4C716A921E200BF523E /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		179DEA5A16A1F33700C1AAA7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				17432E7916B8714700613405 /* caserma.png */,
 				177EC57516A3A49E00D7FE62 /* cella-cliccata.png */,
 				17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */,
 				179DEA5816A1F32F00C1AAA7 /* cella.png */,
@@ -306,6 +309,7 @@
 				179DEA5916A1F32F00C1AAA7 /* cella.png in Resources */,
 				177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */,
 				17EE6A2C16B690DF00A75B8E /* centro_del_villaggio.png in Resources */,
+				17432E7A16B8714700613405 /* caserma.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

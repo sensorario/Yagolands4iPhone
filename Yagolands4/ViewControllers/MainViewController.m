@@ -25,21 +25,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"- (void)viewWillAppear:(BOOL)animated");
-    
-    NSLog(@"self.delegate.idCentroDelVillaggio = %d", self.delegate.idCentroDelVillaggio);
-    
     if(self.delegate.idCentroDelVillaggio > 0) {
         NSInteger tag = self.delegate.idCentroDelVillaggio;
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCentroDelVillaggio];
     }
-    
+    if(self.delegate.idCaserma > 0) {
+        NSInteger tag = self.delegate.idCaserma;
+        [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCaserma];
+    }
 }
 
 - (void)viewDidLoad
 {
-    NSLog(@"- (void)viewDidLoad");
-    
     [super viewDidLoad];
     
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
@@ -117,15 +114,10 @@
     /* Inversione dell'immagine. */
     [view toggleImage];
     
-    Y4AppDelegate * delegate = (Y4AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"idCentroDelVillaggio: %d", delegate.idCentroDelVillaggio);
-    
     /* Carico il ViewController della cella. */
     CellViewController * cell = nil;
     cell = [[CellViewController alloc] init];
     [cell setIdCell:view.tag];
-    NSLog(@"ID Cella = %d.", view.tag);
-    NSLog(@"ID Cella = %d.", cell.idCell);
     [self.navigationController pushViewController:cell animated:TRUE];
 }
 

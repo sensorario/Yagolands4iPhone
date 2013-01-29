@@ -6,5 +6,6 @@
 
 - (void)toggleImage;
 - (void)setImageOfCentroDelVillaggio;
+- (void)setImageOfCaserma;
 
 @end

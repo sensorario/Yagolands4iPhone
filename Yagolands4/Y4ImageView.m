@@ -4,6 +4,7 @@
     NSString * immaginePerIClickPari;
     NSString * immaginePerIClickDispari;
     NSString * immagineCentroDelVillaggio;
+    NSString * immagineCaserma;
 }
 
 @synthesize numeroTappate;
@@ -15,6 +16,7 @@
         immaginePerIClickPari = @"cella.png";
         immaginePerIClickDispari = @"cella-cliccata.png";
         immagineCentroDelVillaggio = @"centro_del_villaggio.png";
+        immagineCaserma = @"caserma.png";
         [self setImage:[UIImage imageNamed:immaginePerIClickPari]];
     }
     return self;
@@ -39,6 +41,12 @@
 - (void)setImageOfCentroDelVillaggio
 {
     UIImage * nomeImmagine = [UIImage imageNamed:immagineCentroDelVillaggio];
+    [self setImage:nomeImmagine];
+}
+
+- (void)setImageOfCaserma
+{
+    UIImage * nomeImmagine = [UIImage imageNamed:immagineCaserma];
     [self setImage:nomeImmagine];
 }
 
