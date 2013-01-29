@@ -31,7 +31,6 @@
     
     if(self.delegate.idCentroDelVillaggio > 0) {
         NSInteger tag = self.delegate.idCentroDelVillaggio;
-        NSLog(@"Cella da colorare = %@", [self.view viewWithTag:tag]);
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCentroDelVillaggio];
     }
     

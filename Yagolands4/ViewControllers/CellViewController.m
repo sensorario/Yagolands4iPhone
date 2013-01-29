@@ -51,13 +51,13 @@
     
     if([self centroDelVillaggionNotExists]) {
         [self mostraBottonePerCostruireIlCentroDelVillaggio];
+        [self startTimerToBuildCentroDelVillaggio];
     } else if ([self possoCostruireLaCaserma]) {
         [self mostraBottonePerCostruireLaCaserma];
     } else {
         if([self buttonToBuildCentroDelVillaggioExists]) {
             [self removeButtonForBuildCentroDelVillaggio];
             [self showLabelCentroDelVillaggioInCostruzione];
-            [self startTimerToBuildCentroDelVillaggio];
         }
     }    
 }
