@@ -7,28 +7,26 @@
 
 @implementation StartToBuildViewController
 
-- (void)startToBuildCentroDelVillaggio
-{
-    Y4AppDelegate * delegate = (Y4AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    if(delegate.booCentroDelVillaggio == 0) {
-        NSLog(@"Inizio a costruire il centro del villaggio.");
-        [delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:10]];
-        [delegate setBooCentroDelVillaggio:true];        
-    } else {
-        NSLog(@"La costruzione del centro del villaggio terminerà alle %@", delegate.endJobCentroDelVillaggio);
-        NSLog(@"Mancano ancora %f secondi", [delegate timeLeftToBuildCentroDelVillaggio]);
-    }
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
         [self setTitle:@"Inizio costruzione"];
-        [self startToBuildCentroDelVillaggio];
+        
+        if(self.delegate.booCentroDelVillaggio == 0) {
+            [self startToBuildCentroDelVillaggio];
+        } else {
+            NSLog(@"Ho già costruito il Centro del Villaggio.");
+        }
     }
     return self;
+}
+
+- (void)startToBuildCentroDelVillaggio
+{
+    [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:10]];
+    [self.delegate setBooCentroDelVillaggio:true];
 }
 
 - (void)viewDidLoad

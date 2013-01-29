@@ -26,6 +26,8 @@
     
     if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
         [self setTitle:@"Centro del Villaggio"];
+        [((UITextView *)[self.view viewWithTag:102]) setText:@"Centro Del Villaggio"];
+        [((UITextView *)[self.view viewWithTag:103]) setText:@"Questa ora è casa tua."];
     }
 }
 
@@ -51,15 +53,21 @@
     
     if([self centroDelVillaggionNotExists]) {
         [self mostraBottonePerCostruireIlCentroDelVillaggio];
-        [self startTimerToBuildCentroDelVillaggio];
-    } else if ([self possoCostruireLaCaserma]) {
-        [self mostraBottonePerCostruireLaCaserma];
     } else {
         if([self buttonToBuildCentroDelVillaggioExists]) {
             [self removeButtonForBuildCentroDelVillaggio];
             [self showLabelCentroDelVillaggioInCostruzione];
         }
-    }    
+    }
+    
+    if([self isCentroDelVillaggioCostruito]) {
+        if ([self possoCostruireLaCaserma]) {
+            [self mostraBottonePerCostruireLaCaserma];
+        }
+    }
+    
+    /* } else if ([self possoCostruireLaCaserma]) {
+     [self mostraBottonePerCostruireLaCaserma]; */
 }
 
 # pragma mark Utility methods
@@ -70,6 +78,7 @@
     [labelDescrizione setNumberOfLines:4];
     [labelDescrizione setTextAlignment:NSTextAlignmentCenter];
     [labelDescrizione setText:@"Questa è una landa desolata, un luogo edificabile in cui è possibile fondare il proprio villaggio."];
+    [labelDescrizione setTag:103];
     [self.view addSubview:labelDescrizione];
 }
 
@@ -79,38 +88,35 @@
     [label setBackgroundColor:[UIColor greenColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:@"Landa Desolata"];
+    [label setTag:102];
     [self.view addSubview:label];
 }
 
 - (void)costruisciCentroDelVillaggio
 {
+    [self startTimerToBuildCentroDelVillaggio];
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
-    if(self.delegate.idCentroDelVillaggio == 0) {
-        NSLog(@"Imposto l'id del Centro del Villaggio a %d.", self.idCell);
-        self.delegate.idCentroDelVillaggio = self.idCell;
-    } else {
-        NSLog(@"Id Centro del Villaggio = %d.", self.delegate.idCentroDelVillaggio);
-    }
+    self.delegate.idCentroDelVillaggio = !self.delegate.idCentroDelVillaggio ? self.idCell : 0;
     [self.navigationController pushViewController:controller animated:true];
 }
 
 - (void)costruisciCaserma
 {
+    [self startTimerToBuildCaserma];
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
-    if(self.delegate.idCaserma == 0) {
-        NSLog(@"Imposto l'id della cella con la Caserma a %d.", self.idCell);
-        self.delegate.idCaserma = self.idCell;
-    } else {
-        NSLog(@"La Caserma ha id = %d.", self.delegate.idCaserma);
-    }
+    self.delegate.idCaserma = !self.delegate.idCaserma ? self.idCell : 0;
     [self.navigationController pushViewController:controller animated:true];
 }
 
+- (void)threadCostruisciCaserma:(NSTimer *)theTimer {
+    NSLog(@"Da implementare");
+}
+
 - (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
-    if([self isCentroDelVillaggioCostruito]) {
+    if(self.delegate.idCentroDelVillaggio != 0 &&  [self isCentroDelVillaggioCostruito]) {
         NSLog(@"Ho terminato di costruire il Centro del Villaggio.");
-        [self.timer invalidate];
-        self.timer = nil;
+        [self.timerCentroDelVillaggio invalidate];
+        self.timerCentroDelVillaggio = nil;
     } else {
         NSLog(@"Centro del villaggio costruito in %d.", (int)self.delegate.timeLeftToBuildCentroDelVillaggio);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
@@ -129,11 +135,22 @@
 
 - (void)startTimerToBuildCentroDelVillaggio
 {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                             target:self
-                                           selector:@selector(threadCostruisciCentroDelVillaggio:)
-                                           userInfo:nil
-                                            repeats:YES];
+    NSLog(@"startTimerToBuildCentroDelVillaggio");
+    self.timerCentroDelVillaggio = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(threadCostruisciCentroDelVillaggio:)
+                                                                  userInfo:nil
+                                                                   repeats:YES];
+}
+
+- (void)startTimerToBuildCaserma
+{
+    NSLog(@"startTimerToBuildCaserma");
+    self.timerCaserma = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(threadCostruisciCaserma:)
+                                                                  userInfo:nil
+                                                                   repeats:YES];
 }
 
 - (BOOL)isCentroDelVillaggioCostruito
@@ -180,7 +197,7 @@
                   forState:UIControlStateNormal];
     [self.aButton addTarget:self
                      action:@selector(costruisciCaserma)
-           forControlEvents:UIControlEventTouchDown];
+           forControlEvents:UIControlEventTouchDown]; // */
     [self.view addSubview:self.aButton];
 }
 
