@@ -22,10 +22,10 @@
     [self mostraTestiDescrittivi];
     [self mostroAzioniDisponibili];
     
+    [self setTitle:@"Landa desolata"];
+    
     if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
         [self setTitle:@"Centro del Villaggio"];
-    } else {
-        [self setTitle:@"Landa desolata"];
     }
 }
 
