@@ -17,7 +17,9 @@
         if(self.delegate.booCentroDelVillaggio == 0) {
             [self startToBuildCentroDelVillaggio];
         } else {
-            NSLog(@"Ho già costruito il Centro del Villaggio.");
+            if(self.delegate.booCaserma == 0) {
+                [self startToBuildCaserma];
+            }
         }
     }
     return self;
@@ -27,6 +29,12 @@
 {
     [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:10]];
     [self.delegate setBooCentroDelVillaggio:true];
+}
+
+- (void)startToBuildCaserma
+{
+    [self.delegate setEndJobCaserma:[NSDate dateWithTimeIntervalSinceNow:10]];
+    [self.delegate setBooCaserma:true];
 }
 
 - (void)viewDidLoad

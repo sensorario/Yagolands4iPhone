@@ -10,8 +10,11 @@
 @property (nonatomic) NSInteger idCentroDelVillaggio;
 
 /* Caserma */
+@property (nonatomic) BOOL booCaserma;
 @property (nonatomic) NSInteger idCaserma;
+@property (nonatomic) NSDate * endJobCaserma;
 
 - (float)timeLeftToBuildCentroDelVillaggio;
+- (float)timeLeftToBuildCaserma;
 
 @end

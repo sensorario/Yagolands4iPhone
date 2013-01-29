@@ -9,6 +9,12 @@
     return [self.endJobCentroDelVillaggio timeIntervalSinceDate:now];
 }
 
+- (float)timeLeftToBuildCaserma
+{
+    NSDate * now = [[NSDate alloc] init];
+    return [self.endJobCaserma timeIntervalSinceDate:now];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

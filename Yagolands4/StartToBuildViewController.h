@@ -6,5 +6,6 @@
 @property (nonatomic, strong) Y4AppDelegate * delegate;
 
 - (void)startToBuildCentroDelVillaggio;
+- (void)startToBuildCaserma;
 
 @end
