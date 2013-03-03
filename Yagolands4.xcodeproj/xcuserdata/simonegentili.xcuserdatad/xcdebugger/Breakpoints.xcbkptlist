@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "384021095.946815"
+         timestampString = "384025362.62044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
          landmarkName = "-mostroAzioniDisponibili"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "384021095.946815"
+         timestampString = "384025362.62044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
          landmarkName = "-mostroAzioniDisponibili"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "384021095.946815"
+         timestampString = "384025362.62044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-mostraTestiDescrittivi"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "384021095.946815"
+         timestampString = "384025362.62044"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -23,32 +23,38 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     if([self.delegate giocoFinito]==YES) {
-        Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
-        [self.navigationController pushViewController:controller animated:YES];
+        
+            //Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
+            //self.delegate.window.rootViewController = controller;
+        
+    } else {
+    
+        [self mostraTestiDescrittivi];
+        [self mostroAzioniDisponibili];
+        
+        Y4LandaDesolata * landaDesolata = [[Y4LandaDesolata alloc] init];
+        [self setTitle:[landaDesolata getName]];
+        [((UITextView *)[self.view viewWithTag:102]) setText:[landaDesolata getLocation]];
+        [((UITextView *)[self.view viewWithTag:103]) setText:[landaDesolata getDescription]];
+        
+        if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
+            Y4CentroDelVillaggio * centro = [[Y4CentroDelVillaggio alloc] init];
+            [self setTitle:[centro getName]];
+            [((UITextView *)[self.view viewWithTag:102]) setText:[centro getLocation]];
+            [((UITextView *)[self.view viewWithTag:103]) setText:[centro getDescription]];
+        }
+        
+        if(self.delegate.idCaserma && (self.delegate.idCaserma) == self.idCell) {
+            Y4Caserma * caserma = [[Y4Caserma alloc] init];
+            [self setTitle:[caserma getName]];
+            [((UITextView *)[self.view viewWithTag:102]) setText:[caserma getLocation]];
+            [((UITextView *)[self.view viewWithTag:103]) setText:[caserma getDescription]];
+        }
+        
     }
     
-    [self mostraTestiDescrittivi];
-    [self mostroAzioniDisponibili];
-    
-    Y4LandaDesolata * landaDesolata = [[Y4LandaDesolata alloc] init];
-    [self setTitle:[landaDesolata getName]];
-    [((UITextView *)[self.view viewWithTag:102]) setText:[landaDesolata getLocation]];
-    [((UITextView *)[self.view viewWithTag:103]) setText:[landaDesolata getDescription]];
-    
-    if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
-        Y4CentroDelVillaggio * centro = [[Y4CentroDelVillaggio alloc] init];
-        [self setTitle:[centro getName]];
-        [((UITextView *)[self.view viewWithTag:102]) setText:[centro getLocation]];
-        [((UITextView *)[self.view viewWithTag:103]) setText:[centro getDescription]];
-    }
-    
-    if(self.delegate.idCaserma && (self.delegate.idCaserma) == self.idCell) {
-        Y4Caserma * caserma = [[Y4Caserma alloc] init];
-        [self setTitle:[caserma getName]];
-        [((UITextView *)[self.view viewWithTag:102]) setText:[caserma getLocation]];
-        [((UITextView *)[self.view viewWithTag:103]) setText:[caserma getDescription]];
-    }
 }
 
 - (void)viewDidLoad
@@ -138,6 +144,10 @@
         [self.delegate setIdEdificioCorrente:self.delegate.idCaserma];
         [theTimer invalidate];
         theTimer = nil;
+        
+        Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
+        self.delegate.window.rootViewController = controller;
+        
     } else {
         [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Caserma costruita in %d.", (int)self.delegate.timeLeftToBuildCaserma);

@@ -29,7 +29,7 @@
 
 - (void)startToBuildCentroDelVillaggio
 {
-    [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:10]];
+    [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:4]];
     [self.delegate setBooCentroDelVillaggio:true];
 }
 

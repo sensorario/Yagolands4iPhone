@@ -26,6 +26,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /* Mostro la label di questa cella. */
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 60)];
+    [label setBackgroundColor:[UIColor greenColor]];
+    [label setNumberOfLines:2];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    [label setText:@"Congratualzioni!!! Hai completato il gioco."];
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning
