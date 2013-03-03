@@ -19,7 +19,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    /* Inizializzo l'app. */
     [self setBooCentroDelVillaggio:false];
+    [self setGiocoFinito:NO];
     
     /* Definisco il mio rootViewController. */
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];

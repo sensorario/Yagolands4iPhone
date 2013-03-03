@@ -10,6 +10,10 @@
 		17432E7A16B8714700613405 /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 17432E7916B8714700613405 /* caserma.png */; };
 		1768ADE716A8396F00009763 /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768ADE616A8396F00009763 /* CellViewController.m */; };
 		176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176AE4C816A921E200BF523E /* StartToBuildViewController.m */; };
+		177374CB16E3799D00E88811 /* Y4LandaDesolata.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374CA16E3799D00E88811 /* Y4LandaDesolata.m */; };
+		177374D216E37CC700E88811 /* Y4CentroDelVillaggio.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */; };
+		177374D516E37EAB00E88811 /* Y4Caserma.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D416E37EAB00E88811 /* Y4Caserma.m */; };
+		177374D816E381B300E88811 /* Y4EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D716E381B300E88811 /* Y4EndGameViewController.m */; };
 		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
 		177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 177EC57516A3A49E00D7FE62 /* cella-cliccata.png */; };
 		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
@@ -48,6 +52,14 @@
 		1768ADE616A8396F00009763 /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellViewController.m; path = ViewControllers/CellViewController.m; sourceTree = "<group>"; };
 		176AE4C716A921E200BF523E /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
 		176AE4C816A921E200BF523E /* StartToBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartToBuildViewController.m; sourceTree = "<group>"; };
+		177374C916E3799C00E88811 /* Y4LandaDesolata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4LandaDesolata.h; path = Yagolands4/Y4LandaDesolata.h; sourceTree = "<group>"; };
+		177374CA16E3799D00E88811 /* Y4LandaDesolata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4LandaDesolata.m; path = Yagolands4/Y4LandaDesolata.m; sourceTree = "<group>"; };
+		177374D016E37CC700E88811 /* Y4CentroDelVillaggio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4CentroDelVillaggio.h; sourceTree = "<group>"; };
+		177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4CentroDelVillaggio.m; sourceTree = "<group>"; };
+		177374D316E37EAB00E88811 /* Y4Caserma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4Caserma.h; path = Celle/Y4Caserma.h; sourceTree = "<group>"; };
+		177374D416E37EAB00E88811 /* Y4Caserma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Caserma.m; path = Celle/Y4Caserma.m; sourceTree = "<group>"; };
+		177374D616E381B200E88811 /* Y4EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4EndGameViewController.h; path = ViewControllers/Y4EndGameViewController.h; sourceTree = "<group>"; };
+		177374D716E381B300E88811 /* Y4EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4EndGameViewController.m; path = ViewControllers/Y4EndGameViewController.m; sourceTree = "<group>"; };
 		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
 		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
 		177EC57516A3A49E00D7FE62 /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cella-cliccata.png"; sourceTree = "<group>"; };
@@ -102,6 +114,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		177374CC16E37B2200E88811 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				177374D316E37EAB00E88811 /* Y4Caserma.h */,
+				177374D416E37EAB00E88811 /* Y4Caserma.m */,
+				177374C916E3799C00E88811 /* Y4LandaDesolata.h */,
+				177374CA16E3799D00E88811 /* Y4LandaDesolata.m */,
+				177374D016E37CC700E88811 /* Y4CentroDelVillaggio.h */,
+				177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		177EC57816A3B7B100D7FE62 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +154,8 @@
 				1768ADE616A8396F00009763 /* CellViewController.m */,
 				176AE4C716A921E200BF523E /* StartToBuildViewController.h */,
 				176AE4C816A921E200BF523E /* StartToBuildViewController.m */,
+				177374D616E381B200E88811 /* Y4EndGameViewController.h */,
+				177374D716E381B300E88811 /* Y4EndGameViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -223,6 +250,7 @@
 		17A2C2791686CD9E0078D4C6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				177374CC16E37B2200E88811 /* Cells */,
 				17A2C2761686CD910078D4C6 /* Y4Coordinata.h */,
 				17A2C2771686CD910078D4C6 /* Y4Coordinata.m */,
 			);
@@ -351,6 +379,10 @@
 				177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */,
 				1768ADE716A8396F00009763 /* CellViewController.m in Sources */,
 				176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */,
+				177374CB16E3799D00E88811 /* Y4LandaDesolata.m in Sources */,
+				177374D216E37CC700E88811 /* Y4CentroDelVillaggio.m in Sources */,
+				177374D516E37EAB00E88811 /* Y4Caserma.m in Sources */,
+				177374D816E381B300E88811 /* Y4EndGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,10 @@
 #import "CellViewController.h"
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
+#import "Y4LandaDesolata.h"
+#import "Y4CentroDelVillaggio.h"
+#import "Y4Caserma.h"
+#import "Y4EndGameViewController.h"
 
 @interface CellViewController ()
 
@@ -19,23 +23,31 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if([self.delegate giocoFinito]==YES) {
+        Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    
     [self mostraTestiDescrittivi];
     [self mostroAzioniDisponibili];
     
-    [self setTitle:@"Landa desolata"];
-    [((UITextView *)[self.view viewWithTag:102]) setText:@"Luogo sconosciuto."];
-    [((UITextView *)[self.view viewWithTag:103]) setText:@"Descrizione sconosciuta."];
+    Y4LandaDesolata * landaDesolata = [[Y4LandaDesolata alloc] init];
+    [self setTitle:[landaDesolata getName]];
+    [((UITextView *)[self.view viewWithTag:102]) setText:[landaDesolata getLocation]];
+    [((UITextView *)[self.view viewWithTag:103]) setText:[landaDesolata getDescription]];
     
     if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
-        [self setTitle:@"Centro del Villaggio"];
-        [((UITextView *)[self.view viewWithTag:102]) setText:@"Centro Del Villaggio"];
-        [((UITextView *)[self.view viewWithTag:103]) setText:@"Questa ora è casa tua."];
+        Y4CentroDelVillaggio * centro = [[Y4CentroDelVillaggio alloc] init];
+        [self setTitle:[centro getName]];
+        [((UITextView *)[self.view viewWithTag:102]) setText:[centro getLocation]];
+        [((UITextView *)[self.view viewWithTag:103]) setText:[centro getDescription]];
     }
     
     if(self.delegate.idCaserma && (self.delegate.idCaserma) == self.idCell) {
-        [self setTitle:@"Caserma"];
-        [((UITextView *)[self.view viewWithTag:102]) setText:@"Caserma"];
-        [((UITextView *)[self.view viewWithTag:103]) setText:@"Addestra le tue truppe."];
+        Y4Caserma * caserma = [[Y4Caserma alloc] init];
+        [self setTitle:[caserma getName]];
+        [((UITextView *)[self.view viewWithTag:102]) setText:[caserma getLocation]];
+        [((UITextView *)[self.view viewWithTag:103]) setText:[caserma getDescription]];
     }
 }
 
@@ -121,6 +133,7 @@
 - (void)threadCostruisciCaserma:(NSTimer *)theTimer {
     if(self.delegate.idCaserma != 0 && [self isCasermaCostruita]) {
         NSLog(@"Ho terminato di costruire la Caserma.");
+        [self.delegate setGiocoFinito:YES];
         [theTimer invalidate];
         theTimer = nil;
     } else {
