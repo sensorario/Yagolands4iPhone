@@ -34,6 +34,24 @@
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setText:@"Congratualzioni!!! Hai completato il gioco."];
     [self.view addSubview:label];
+    
+    /* Mostro la label di questa cella. */
+    UILabel * labelAutore = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 280, 60)];
+    [labelAutore setBackgroundColor:[UIColor greenColor]];
+    [labelAutore setNumberOfLines:2];
+    [labelAutore setTextAlignment:NSTextAlignmentCenter];
+    [labelAutore setText:@"Autore: Simone Gentili"];
+    [self.view addSubview:labelAutore];
+    
+    /* Animazione dei titoli di coda. */
+    [UIView animateWithDuration:5 animations:^{
+        label.frame = CGRectOffset(label.frame, 0, -100);
+        labelAutore.frame = CGRectOffset(labelAutore.frame, 0, -100);
+        [UIView animateWithDuration:1 animations:^{label.alpha = 0;}];
+        [UIView animateWithDuration:1 animations:^{labelAutore.alpha = 0;}];
+    } completion:^(BOOL finished) {
+        exit(0);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
