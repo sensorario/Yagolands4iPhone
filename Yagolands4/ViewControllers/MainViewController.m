@@ -29,6 +29,7 @@
         NSInteger tag = self.delegate.idCentroDelVillaggio;
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCentroDelVillaggio];
     }
+    
     if(self.delegate.idCaserma > 0) {
         NSInteger tag = self.delegate.idCaserma;
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCaserma];
@@ -111,14 +112,23 @@
     /* Recupero la view da caricare */
     Y4ImageView * view = (Y4ImageView *)((UITapGestureRecognizer *)sender).view;
     
-    /* Inversione dell'immagine. */
-    [view toggleImage];
-    
-    /* Carico il ViewController della cella. */
-    CellViewController * cell = nil;
-    cell = [[CellViewController alloc] init];
-    [cell setIdCell:view.tag];
-    [self.navigationController pushViewController:cell animated:TRUE];
+    if(view.tag != self.delegate.idCentroDelVillaggio &&
+       view.tag != self.delegate.idCaserma) {
+        /* Inversione dell'immagine. */
+        [view toggleImage];
+        /* Carico il ViewController della cella. */
+        CellViewController * cell = nil;
+        cell = [[CellViewController alloc] init];
+        [cell setIdCell:view.tag];
+        [self.navigationController pushViewController:cell animated:TRUE];
+    } else {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ATTENZIONE!!"
+                                                         message:@"Cella già occupata"
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
 }
 
 - (void)didReceiveMemoryWarning
