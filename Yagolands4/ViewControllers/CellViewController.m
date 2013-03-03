@@ -133,10 +133,13 @@
 - (void)threadCostruisciCaserma:(NSTimer *)theTimer {
     if(self.delegate.idCaserma != 0 && [self isCasermaCostruita]) {
         NSLog(@"Ho terminato di costruire la Caserma.");
+        [self.delegate setEdificioInCostruzione:NO];
         [self.delegate setGiocoFinito:YES];
+        [self.delegate setIdEdificioCorrente:self.delegate.idCaserma];
         [theTimer invalidate];
         theTimer = nil;
     } else {
+        [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Caserma costruita in %d.", (int)self.delegate.timeLeftToBuildCaserma);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCaserma]];
@@ -146,9 +149,12 @@
 - (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
     if(self.delegate.idCentroDelVillaggio != 0 &&  [self isCentroDelVillaggioCostruito]) {
         NSLog(@"Ho terminato di costruire il Centro del Villaggio.");
+        [self.delegate setEdificioInCostruzione:NO];
+        [self.delegate setIdEdificioCorrente:self.delegate.idCentroDelVillaggio];
         [theTimer invalidate];
         theTimer = nil;
     } else {
+        [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Centro del villaggio costruito in %d.", (int)self.delegate.timeLeftToBuildCentroDelVillaggio);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];

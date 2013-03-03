@@ -6,6 +6,8 @@
 
 /* Variabili di gioco. */
 @property (nonatomic) BOOL giocoFinito;
+@property (nonatomic) BOOL edificioInCostruzione;
+@property (nonatomic) NSInteger idEdificioCorrente;
 
 /* Centro del Villaggio. */
 @property (nonatomic) BOOL booCentroDelVillaggio;

@@ -22,7 +22,9 @@
     /* Inizializzo l'app. */
     [self setBooCentroDelVillaggio:false];
     [self setGiocoFinito:NO];
-    
+    [self setEdificioInCostruzione:NO];
+    [self setIdEdificioCorrente:nil];
+
     /* Definisco il mio rootViewController. */
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
     

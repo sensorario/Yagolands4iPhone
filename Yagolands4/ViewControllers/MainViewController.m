@@ -36,6 +36,23 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    if(self.delegate.edificioInCostruzione == YES) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"MAPPA NON VISIBILE"
+                                                         message:@"Non puoi vedere la mappa mentre viene costruito un edificio."
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"OK", nil];
+        [alert show];
+        CellViewController * cell = nil;
+        cell = [[CellViewController alloc] init];
+        [cell setIdCell:self.delegate.idEdificioCorrente];
+        [self.navigationController pushViewController:cell animated:TRUE];
+        
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +66,7 @@
     Y4Coordinata * coordinata = [[Y4Coordinata alloc] init];
     [self disegnaLeMieTerreCon:coordinata];
     [self disegnaLeTerreNemicheCon:coordinata];
+    
 }
 
 - (void)disegnaLeMieTerreCon: (Y4Coordinata *)centro
@@ -109,12 +127,12 @@
 
 - (void)toggleImage: (id)sender
 {
+    
     /* Recupero la view da caricare */
     Y4ImageView * view = (Y4ImageView *)((UITapGestureRecognizer *)sender).view;
     
     if(view.tag != self.delegate.idCentroDelVillaggio &&
        view.tag != self.delegate.idCaserma) {
-        /* Inversione dell'immagine. */
         [view toggleImage];
         /* Carico il ViewController della cella. */
         CellViewController * cell = nil;

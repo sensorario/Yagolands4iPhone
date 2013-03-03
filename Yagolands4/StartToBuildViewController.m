@@ -16,9 +16,11 @@
         
         if(self.delegate.booCentroDelVillaggio == 0) {
             [self startToBuildCentroDelVillaggio];
+            [self.delegate setEdificioInCostruzione:YES];
         } else {
             if(self.delegate.booCaserma == 0) {
                 [self startToBuildCaserma];
+                [self.delegate setEdificioInCostruzione:YES];
             }
         }
     }
