@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17432E7A16B8714700613405 /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 17432E7916B8714700613405 /* caserma.png */; };
 		1768ADE716A8396F00009763 /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768ADE616A8396F00009763 /* CellViewController.m */; };
 		176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176AE4C816A921E200BF523E /* StartToBuildViewController.m */; };
 		177374CB16E3799D00E88811 /* Y4LandaDesolata.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374CA16E3799D00E88811 /* Y4LandaDesolata.m */; };
@@ -15,9 +14,7 @@
 		177374D516E37EAB00E88811 /* Y4Caserma.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D416E37EAB00E88811 /* Y4Caserma.m */; };
 		177374D816E381B300E88811 /* Y4EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D716E381B300E88811 /* Y4EndGameViewController.m */; };
 		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
-		177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 177EC57516A3A49E00D7FE62 /* cella-cliccata.png */; };
 		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
-		179DEA5916A1F32F00C1AAA7 /* cella.png in Resources */ = {isa = PBXBuildFile; fileRef = 179DEA5816A1F32F00C1AAA7 /* cella.png */; };
 		17A2C2421686CD370078D4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2411686CD370078D4C6 /* UIKit.framework */; };
 		17A2C2441686CD370078D4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2431686CD370078D4C6 /* Foundation.framework */; };
 		17A2C2461686CD370078D4C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2451686CD370078D4C6 /* CoreGraphics.framework */; };
@@ -33,7 +30,10 @@
 		17A2C26A1686CD370078D4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2681686CD370078D4C6 /* InfoPlist.strings */; };
 		17A2C26D1686CD380078D4C6 /* Yagolands4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */; };
 		17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C2771686CD910078D4C6 /* Y4Coordinata.m */; };
-		17EE6A2C16B690DF00A75B8E /* centro_del_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */; };
+		17C2E70516E3DFDE00EBA8D9 /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70116E3DFDE00EBA8D9 /* caserma.png */; };
+		17C2E70616E3DFDE00EBA8D9 /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */; };
+		17C2E70716E3DFDE00EBA8D9 /* cella.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70316E3DFDE00EBA8D9 /* cella.png */; };
+		17C2E70816E3DFDE00EBA8D9 /* centro_del_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17432E7916B8714700613405 /* caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caserma.png; sourceTree = "<group>"; };
 		1768ADE516A8396F00009763 /* CellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellViewController.h; path = ViewControllers/CellViewController.h; sourceTree = "<group>"; };
 		1768ADE616A8396F00009763 /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellViewController.m; path = ViewControllers/CellViewController.m; sourceTree = "<group>"; };
 		176AE4C716A921E200BF523E /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
@@ -60,12 +59,10 @@
 		177374D416E37EAB00E88811 /* Y4Caserma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Caserma.m; path = Celle/Y4Caserma.m; sourceTree = "<group>"; };
 		177374D616E381B200E88811 /* Y4EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4EndGameViewController.h; path = ViewControllers/Y4EndGameViewController.h; sourceTree = "<group>"; };
 		177374D716E381B300E88811 /* Y4EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4EndGameViewController.m; path = ViewControllers/Y4EndGameViewController.m; sourceTree = "<group>"; };
-		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
-		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
-		177EC57516A3A49E00D7FE62 /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cella-cliccata.png"; sourceTree = "<group>"; };
+		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4ImageView.h; path = Yagolands4/Y4ImageView.h; sourceTree = "<group>"; };
+		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4ImageView.m; path = Yagolands4/Y4ImageView.m; sourceTree = "<group>"; };
 		179DEA5316A1EBB800C1AAA7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
 		179DEA5416A1EBB800C1AAA7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
-		179DEA5816A1F32F00C1AAA7 /* cella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cella.png; sourceTree = "<group>"; };
 		17A2C23D1686CD370078D4C6 /* Yagolands4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yagolands4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A2C2411686CD370078D4C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17A2C2431686CD370078D4C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,7 +84,10 @@
 		17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yagolands4Tests.m; sourceTree = "<group>"; };
 		17A2C2761686CD910078D4C6 /* Y4Coordinata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4Coordinata.h; path = Yagolands4/Y4Coordinata.h; sourceTree = "<group>"; };
 		17A2C2771686CD910078D4C6 /* Y4Coordinata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Coordinata.m; path = Yagolands4/Y4Coordinata.m; sourceTree = "<group>"; };
-		17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centro_del_villaggio.png; sourceTree = "<group>"; };
+		17C2E70116E3DFDE00EBA8D9 /* caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caserma.png; sourceTree = "<group>"; };
+		17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cella-cliccata.png"; sourceTree = "<group>"; };
+		17C2E70316E3DFDE00EBA8D9 /* cella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cella.png; sourceTree = "<group>"; };
+		17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centro_del_villaggio.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,15 +127,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		177EC57816A3B7B100D7FE62 /* CustomComponents */ = {
-			isa = PBXGroup;
-			children = (
-				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
-				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
-			);
-			name = CustomComponents;
-			sourceTree = "<group>";
-		};
 		177EC57916A3B80C00D7FE62 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,20 +151,10 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		179DEA5A16A1F33700C1AAA7 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				17432E7916B8714700613405 /* caserma.png */,
-				177EC57516A3A49E00D7FE62 /* cella-cliccata.png */,
-				17EE6A2B16B690DF00A75B8E /* centro_del_villaggio.png */,
-				179DEA5816A1F32F00C1AAA7 /* cella.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		17A2C2321686CD370078D4C6 = {
 			isa = PBXGroup;
 			children = (
+				17C2E70016E3DFDE00EBA8D9 /* Images */,
 				17A2C2471686CD370078D4C6 /* Yagolands4 */,
 				17A2C2651686CD370078D4C6 /* Yagolands4Tests */,
 				17A2C2401686CD370078D4C6 /* Frameworks */,
@@ -204,9 +185,7 @@
 		17A2C2471686CD370078D4C6 /* Yagolands4 */ = {
 			isa = PBXGroup;
 			children = (
-				177EC57816A3B7B100D7FE62 /* CustomComponents */,
 				17A2C2791686CD9E0078D4C6 /* Components */,
-				179DEA5A16A1F33700C1AAA7 /* Images */,
 				179DEA5716A1EBC700C1AAA7 /* ViewControllers */,
 				17A2C2481686CD370078D4C6 /* Supporting Files */,
 				177EC57916A3B80C00D7FE62 /* Delegate */,
@@ -251,11 +230,24 @@
 			isa = PBXGroup;
 			children = (
 				177374CC16E37B2200E88811 /* Cells */,
+				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
+				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
 				17A2C2761686CD910078D4C6 /* Y4Coordinata.h */,
 				17A2C2771686CD910078D4C6 /* Y4Coordinata.m */,
 			);
 			name = Components;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		17C2E70016E3DFDE00EBA8D9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				17C2E70116E3DFDE00EBA8D9 /* caserma.png */,
+				17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */,
+				17C2E70316E3DFDE00EBA8D9 /* cella.png */,
+				17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,10 +326,10 @@
 				17A2C2541686CD370078D4C6 /* Default.png in Resources */,
 				17A2C2561686CD370078D4C6 /* Default@2x.png in Resources */,
 				17A2C2581686CD370078D4C6 /* Default-568h@2x.png in Resources */,
-				179DEA5916A1F32F00C1AAA7 /* cella.png in Resources */,
-				177EC57616A3A49E00D7FE62 /* cella-cliccata.png in Resources */,
-				17EE6A2C16B690DF00A75B8E /* centro_del_villaggio.png in Resources */,
-				17432E7A16B8714700613405 /* caserma.png in Resources */,
+				17C2E70516E3DFDE00EBA8D9 /* caserma.png in Resources */,
+				17C2E70616E3DFDE00EBA8D9 /* cella-cliccata.png in Resources */,
+				17C2E70716E3DFDE00EBA8D9 /* cella.png in Resources */,
+				17C2E70816E3DFDE00EBA8D9 /* centro_del_villaggio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
