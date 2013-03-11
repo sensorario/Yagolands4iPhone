@@ -1,5 +1,6 @@
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
+#import "Y4TempiDiCostruzione.h"
 
 @interface StartToBuildViewController ()
 
@@ -29,20 +30,36 @@
 
 - (void)startToBuildCentroDelVillaggio
 {
-    [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:4]];
+    
+    /* Recupero il tempo di costruzione del centro del villaggio. */
+    Y4TempiDiCostruzione * tempi = [[Y4TempiDiCostruzione alloc] init];
+    int tempo = tempi.centroDelvillaggio;
+    
+    /* Imposto il tempo di costruzione del centro del villaggio. */
+    [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:tempo]];
     [self.delegate setBooCentroDelVillaggio:true];
+    
 }
 
 - (void)startToBuildCaserma
 {
-    [self.delegate setEndJobCaserma:[NSDate dateWithTimeIntervalSinceNow:10]];
+    
+    /* Recupero il tempo di costruzione del centro del villaggio. */
+    Y4TempiDiCostruzione * tempi = [[Y4TempiDiCostruzione alloc] init];
+    int tempo = tempi.caserma;
+    
+    /* Imposto il tempo di costruzione del centro del villaggio. */
+    [self.delegate setEndJobCaserma:[NSDate dateWithTimeIntervalSinceNow:tempo]];
     [self.delegate setBooCaserma:true];
+    
 }
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [self mostraTestiDescrittivi];
+    
 }
 
 - (void)didReceiveMemoryWarning
