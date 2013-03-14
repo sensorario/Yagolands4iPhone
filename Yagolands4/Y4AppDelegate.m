@@ -24,6 +24,7 @@
     [self setGiocoFinito:NO];
     [self setEdificioInCostruzione:NO];
     [self setIdEdificioCorrente:nil];
+    [self setHoChiusoLaFinestra:NO];
 
     /* Definisco il mio rootViewController. */
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];

@@ -19,6 +19,9 @@
 @property (nonatomic) NSInteger idCaserma;
 @property (nonatomic) NSDate * endJobCaserma;
 
+/* Controlli generali. */
+@property (nonatomic) BOOL hoChiusoLaFinestra;
+
 /* Metodi. */
 - (float)timeLeftToBuildCentroDelVillaggio;
 - (float)timeLeftToBuildCaserma;

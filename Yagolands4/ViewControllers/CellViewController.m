@@ -5,6 +5,7 @@
 #import "Y4CentroDelVillaggio.h"
 #import "Y4Caserma.h"
 #import "Y4EndGameViewController.h"
+#import "Y4TempiDiCostruzione.h"
 
 @interface CellViewController ()
 
@@ -23,6 +24,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    /* Se mi trovo qui, mi comporto come se il back button sia stato premuto. */
+    [self.delegate setHoChiusoLaFinestra:YES];
     
     if([self.delegate giocoFinito]==YES) {
         
@@ -179,17 +183,33 @@
 }
 
 - (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
+    
     if(self.delegate.idCentroDelVillaggio != 0 &&  [self isCentroDelVillaggioCostruito]) {
+        
         NSLog(@"Ho terminato di costruire il Centro del Villaggio.");
         [self.delegate setEdificioInCostruzione:NO];
         [self.delegate setIdEdificioCorrente:self.delegate.idCentroDelVillaggio];
         [theTimer invalidate];
         theTimer = nil;
+        
     } else {
+        
+        if(self.delegate.hoChiusoLaFinestra == NO) {
+            
+            /* Recupero il tempo di costruzione del centro del villaggio. */
+            Y4TempiDiCostruzione * tempi = [[Y4TempiDiCostruzione alloc] init];
+            if ((int)tempi.centroDelvillaggio - 3 > (int)self.delegate.timeLeftToBuildCentroDelVillaggio) {
+                [self.delegate setHoChiusoLaFinestra:YES];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
+        }
+        
         [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Centro del villaggio costruito in %d.", (int)self.delegate.timeLeftToBuildCentroDelVillaggio);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];
+        
     }
 }
 
