@@ -122,18 +122,40 @@
 
 - (void)costruisciCentroDelVillaggio
 {
+    
     [self startTimerToBuildCentroDelVillaggio];
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
     self.delegate.idCentroDelVillaggio = !self.delegate.idCentroDelVillaggio ? self.idCell : 0;
     [self.navigationController pushViewController:controller animated:true];
+    
 }
 
 - (void)costruisciCaserma
 {
-    [self startTimerToBuildCaserma];
-    StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
-    self.delegate.idCaserma = !self.delegate.idCaserma ? self.idCell : 0;
-    [self.navigationController pushViewController:controller animated:true];
+    
+    if(self.delegate.idCaserma == 0) {
+        
+        if(self.delegate.idCentroDelVillaggio != self.idCell) {
+            
+            /* Faccio partire la costruzione della caserma. */
+            [self startTimerToBuildCaserma];
+            StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
+            self.delegate.idCaserma = !self.delegate.idCaserma ? self.idCell : 0;
+            [self.navigationController pushViewController:controller animated:true];
+            
+        } else {
+            
+            /* Non posso costruire più edifici sulla stessa cella. */
+            [[[UIAlertView alloc] initWithTitle:@"IMPOSSIBILE COSTRUIRE"
+                                        message:@"Non puoi costruire più edifici sulla stessa cella."
+                                       delegate:self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"OK", nil] show];
+
+        }
+        
+    }
+    
 }
 
 - (void)threadCostruisciCaserma:(NSTimer *)theTimer {
@@ -259,11 +281,13 @@
 
 - (void)mostraBottonePerCostruireLaCaserma
 {
+
     self.aButtonToBuildCaserma = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButtonToBuildCaserma setFrame:CGRectMake(20,360,280,40)];
     [self.aButtonToBuildCaserma setTitle:@"Caserma" forState:UIControlStateNormal];
-    [self.aButtonToBuildCaserma addTarget:self action:@selector(costruisciCaserma) forControlEvents:UIControlEventTouchDown]; // */
+    [self.aButtonToBuildCaserma addTarget:self action:@selector(costruisciCaserma) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.aButtonToBuildCaserma];
+    
 }
 
 - (BOOL)centroDelVillaggionNotExists
