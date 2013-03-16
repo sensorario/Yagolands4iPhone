@@ -5,8 +5,10 @@
 
 - (float)timeLeftToBuildCentroDelVillaggio
 {
+    
     NSDate * now = [[NSDate alloc] init];
     return [self.endJobCentroDelVillaggio timeIntervalSinceDate:now];
+    
 }
 
 - (float)timeLeftToBuildCaserma

@@ -25,8 +25,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    /* Se mi trovo qui, mi comporto come se il back button sia stato premuto. */
-    [self.delegate setHoChiusoLaFinestra:YES];
+    if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
+        if((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
+            [self.delegate setHoChiusoLaFinestra:YES];;
+        }
+    }
     
     if([self.delegate giocoFinito]==YES) {
         
@@ -163,7 +166,9 @@
 }
 
 - (void)threadCostruisciCaserma:(NSTimer *)theTimer {
+    
     if(self.delegate.idCaserma != 0 && [self isCasermaCostruita]) {
+        
         NSLog(@"Ho terminato di costruire la Caserma.");
         [self.delegate setEdificioInCostruzione:NO];
         [self.delegate setGiocoFinito:YES];
@@ -174,12 +179,28 @@
         Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
         self.delegate.window.rootViewController = controller;
         
+        [self.delegate setHoChiusoLaFinestra:NO];
+        
     } else {
+        
+        if(self.delegate.hoChiusoLaFinestra == NO) {
+            
+            /* Recupero il tempo di costruzione della caserma. */
+            Y4TempiDiCostruzione * tempi = [[Y4TempiDiCostruzione alloc] init];
+            if ((int)tempi.caserma - 3 > (int)self.delegate.timeLeftToBuildCaserma) {
+                [self.delegate setHoChiusoLaFinestra:YES];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
+        }
+
         [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Caserma costruita in %d.", (int)self.delegate.timeLeftToBuildCaserma);
         UILabel * label = (UILabel *)[self.view viewWithTag:101];
         [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCaserma]];
+        
     }
+    
 }
 
 - (void)threadCostruisciCentroDelVillaggio:(NSTimer *)theTimer {
@@ -191,6 +212,8 @@
         [self.delegate setIdEdificioCorrente:self.delegate.idCentroDelVillaggio];
         [theTimer invalidate];
         theTimer = nil;
+        
+        [self.delegate setHoChiusoLaFinestra:NO];
         
     } else {
         
