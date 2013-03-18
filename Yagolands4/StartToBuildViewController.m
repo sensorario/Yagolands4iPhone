@@ -47,11 +47,15 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    
+ 
+    /* Se sto costruendo il centro del villaggio e sto uscendo da questo
+     UIViewController, devo impostare self.delegate.oChiusoLaFinestra a YES. */
     if ((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
         [self.delegate setHoChiusoLaFinestra:YES];
     }
     
+    /* Se sto costruendo la caserma e sto uscendo da questo
+     UIViewController, devo impostare self.delegate.oChiusoLaFinestra a YES. */
     if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
         [self.delegate setHoChiusoLaFinestra:YES];
     }
