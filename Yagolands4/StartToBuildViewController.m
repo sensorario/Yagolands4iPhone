@@ -45,6 +45,19 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    if ((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
+        [self.delegate setHoChiusoLaFinestra:YES];
+    }
+    
+    if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
+        [self.delegate setHoChiusoLaFinestra:YES];
+    }
+    
+}
+
 - (void)startToBuildCaserma
 {
     

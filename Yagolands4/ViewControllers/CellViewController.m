@@ -32,12 +32,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
-    if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
-        if((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
-            [self.delegate setHoChiusoLaFinestra:YES];;
-        }
-    }
-    
     if([self.delegate giocoFinito]==YES) {
         
             //Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
