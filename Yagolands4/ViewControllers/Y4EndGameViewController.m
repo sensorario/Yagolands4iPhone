@@ -1,10 +1,6 @@
-//
-//  Y4EndGameViewController.m
-//  Yagolands4
-//
-//  Created by Simone Gentili on 03/03/13.
-//  Copyright (c) 2013 SENSORARIO. All rights reserved.
-//
+/**
+ * Questa è la schermata della fine del gioco.
+ */
 
 #import "Y4EndGameViewController.h"
 

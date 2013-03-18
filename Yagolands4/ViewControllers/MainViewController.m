@@ -1,3 +1,8 @@
+/**
+ * Questa è la mappa di gioco. Qui è possibile vedere tutte le celle libere
+ * e selezionarne una per costruirci sopra un edificio.
+ */
+
 #import "MainViewController.h"
 #import "CellViewController.h"
 #import "Y4ImageView.h"

@@ -1,3 +1,7 @@
+/**
+ * Questa è la schermata che mostra l'avvio delle costruzioni.
+ */
+
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
 #import "Y4TempiDiCostruzione.h"
