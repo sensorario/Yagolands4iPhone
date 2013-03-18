@@ -15,5 +15,6 @@
 
 @property (nonatomic) NSTimer * timerCentroDelVillaggio;
 @property (nonatomic) NSTimer * timerCaserma;
+@property (nonatomic) NSTimer * timerCountdown;
 
 @end

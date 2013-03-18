@@ -29,8 +29,70 @@
     
 }
 
+- (void)threadCountDown:(id)sender
+{
+    
+    if(self.delegate.edificioInCostruzione == YES) {
+        
+        int secondi = 0;
+        NSLog(@"Calcolo i secondi rimanenti");
+        
+        if((int)self.delegate.timeLeftToBuildCentroDelVillaggio >= 0) {
+            
+            NSLog(@"Calcolo i secondi rimanenti per il Centro del Villaggio.");
+            secondi = (int)self.delegate.timeLeftToBuildCentroDelVillaggio;
+            NSString * string = [NSString stringWithFormat:@"Mancano %d secondi.", secondi];
+            [self.labelInContruzione setText:string];
+            
+        } else {
+            
+            if((int)self.delegate.timeLeftToBuildCaserma >= 0) {
+                
+                NSLog(@"Calcolo i secondi rimanenti per la Caserma.");
+                secondi = (int)self.delegate.timeLeftToBuildCaserma;
+                NSString * string = [NSString stringWithFormat:@"Mancano %d secondi.", secondi];
+                NSLog(@"%@",self.labelCasermaInContruzione);
+                
+                /* Aggiungo la label altrimenti non visibile. */
+                self.labelCasermaInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
+                [self.labelCasermaInContruzione setTextAlignment:NSTextAlignmentLeft];
+                [self.labelCasermaInContruzione setTag:101];
+                [self.labelCasermaInContruzione setText:string];
+                [self.view addSubview:self.labelCasermaInContruzione];
+                
+            }
+            
+        }
+        
+    } else {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        [self.timerCountdown invalidate];
+        
+    }
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [self.timerCountdown invalidate];
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    if(!self.timerCountdown) {
+        if((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0 ||
+           (int)self.delegate.timeLeftToBuildCaserma > 0) {
+            self.timerCountdown = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                   target:self
+                                                                 selector:@selector(threadCountDown:)
+                                                                 userInfo:nil
+                                                                  repeats:YES];
+        }
+    }
     
     if([self.delegate giocoFinito]==YES) {
         
@@ -69,6 +131,10 @@
 {
     
     [super viewDidLoad];
+    
+    self.labelInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
+    [self.labelInContruzione setTextAlignment:NSTextAlignmentLeft];
+    [self.labelInContruzione setTag:101];
     
 }
 
@@ -212,8 +278,7 @@
 
         [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Caserma costruita in %d.", (int)self.delegate.timeLeftToBuildCaserma);
-        UILabel * label = (UILabel *)[self.view viewWithTag:101];
-        [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCaserma]];
+        [self.labelCasermaInContruzione setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCaserma]];
         
     }
     
@@ -249,8 +314,8 @@
         
         [self.delegate setEdificioInCostruzione:YES];
         NSLog(@"Centro del villaggio costruito in %d.", (int)self.delegate.timeLeftToBuildCentroDelVillaggio);
-        UILabel * label = (UILabel *)[self.view viewWithTag:101];
-        [label setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];
+//        UILabel * label = (UILabel *)[self.view viewWithTag:101];
+        [self.labelInContruzione setText:[NSString stringWithFormat:@"Tempo residuo %d", (int)self.delegate.timeLeftToBuildCentroDelVillaggio]];
         
     }
     
@@ -338,9 +403,6 @@
 - (void)showLabelCentroDelVillaggioInCostruzione
 {
     
-    self.labelInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
-    [self.labelInContruzione setTextAlignment:NSTextAlignmentLeft];
-    [self.labelInContruzione setTag:101];
     [self.view addSubview:self.labelInContruzione];
     
 }
@@ -348,9 +410,6 @@
 - (void)showLabelCasermaInCostruzione
 {
     
-    self.labelCasermaInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
-    [self.labelCasermaInContruzione setTextAlignment:NSTextAlignmentLeft];
-    [self.labelCasermaInContruzione setTag:101];
     [self.view addSubview:self.labelCasermaInContruzione];
     
 }
