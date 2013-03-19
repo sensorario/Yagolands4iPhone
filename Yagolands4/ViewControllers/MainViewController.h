@@ -4,8 +4,11 @@
 
 @interface MainViewController : Yagolands4ViewController
 
+/* Posizione del giocatore. */
 @property (nonatomic) NSInteger posizioneX;
 @property (nonatomic) NSInteger posizioneY;
+
+/* Cella corrente. */
 @property (nonatomic) NSInteger identificatoreCella;
 
 @end

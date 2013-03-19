@@ -3,6 +3,7 @@
 
 @interface StartToBuildViewController : Yagolands4ViewController
 
+/* Metodi per costruire gli edifici. */
 - (void)startToBuildCentroDelVillaggio;
 - (void)startToBuildCaserma;
 

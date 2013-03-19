@@ -94,13 +94,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    
-    [super didReceiveMemoryWarning];
-    
-}
-
 - (void)mostraTestiDescrittivi
 {
     

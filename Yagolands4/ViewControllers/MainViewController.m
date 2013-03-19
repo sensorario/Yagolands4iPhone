@@ -9,11 +9,6 @@
 
 @implementation MainViewController
 
-@synthesize posizioneX;
-@synthesize posizioneY;
-@synthesize identificatoreCella;
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
@@ -24,14 +19,17 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
+ 
+    /* Imposto il titolo della schermata. */
     [self setTitle:@"Yagolands"];
     
+    /* Se in questa mappa c'è il centro del villaggio, lo mostro. */
     if(self.delegate.idCentroDelVillaggio > 0) {
         NSInteger tag = self.delegate.idCentroDelVillaggio;
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCentroDelVillaggio];
     }
     
+    /* Se in questa mappa c'è la caserma, la mostro. */
     if(self.delegate.idCaserma > 0) {
         NSInteger tag = self.delegate.idCaserma;
         [(Y4ImageView *)[self.view viewWithTag:tag] setImageOfCaserma];
@@ -42,13 +40,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     
+    /* Se sto costruendo un edificio. */
     if(self.delegate.edificioInCostruzione == YES) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"MAPPA NON VISIBILE"
-                                                         message:@"Non puoi vedere la mappa mentre viene costruito un edificio."
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles:@"OK", nil];
-        [alert show];
+        
+        /* Mostro un messaggio di errore. */
+        [[[UIAlertView alloc] initWithTitle:@"MAPPA NON VISIBILE"
+                                    message:@"Non puoi vedere la mappa mentre viene costruito un edificio."
+                                   delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"OK", nil] show];
+        
+        /* ... e mostro di nuovo l'edificio corrente. */
         CellViewController * cell = nil;
         cell = [[CellViewController alloc] init];
         [cell setIdCell:self.delegate.idEdificioCorrente];
@@ -63,12 +65,14 @@
     
     [super viewDidLoad];
     
+    /* Mostro un messaggio di benvenuto. */
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
     [label setText:@"Wellcome to Yagolands4iPhone"];
     [label setBackgroundColor:[UIColor redColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:label];
     
+    /* Disegno le due plance di gioco. */
     Y4Coordinata * coordinata = [[Y4Coordinata alloc] init];
     [self disegnaLeMieTerreCon:coordinata];
     [self disegnaLeTerreNemicheCon:coordinata];
@@ -78,8 +82,11 @@
 - (void)disegnaLeMieTerreCon: (Y4Coordinata *)centro
 {
     
+    /* Imposto il centro per le celle del giocaoter umano */
     [self setPosizioneX:40];
     [self setPosizioneY:140];
+    
+    /* Disegno le celle attorno a quel centro. */
     [self disegnaTerreniCon:centro];
     
 }
@@ -87,8 +94,11 @@
 - (void)disegnaLeTerreNemicheCon: (Y4Coordinata *)centro
 {
     
+    /* Imposto il centro per le celle del computer. */
     [self setPosizioneX:200];
     [self setPosizioneY:300];
+    
+    /* Disegno le celle attorno a quel centro. */
     [self disegnaTerreniCon:centro];
     
 }
@@ -131,7 +141,7 @@
     
     /* Disegno dell'immagine. */
     Y4ImageView * imageView = [[Y4ImageView alloc] init];
-    [imageView setTag:++identificatoreCella];
+    [imageView setTag:++self.identificatoreCella];
     [imageView setFrame:CGRectMake([self posizioneX]+offsetSinistro,self.posizioneY+offsetAlto,larghezzaCella,larghezzaCella)];
     [imageView setUserInteractionEnabled:TRUE];
     [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleImage:)]];
@@ -145,8 +155,10 @@
     /* Recupero la view da caricare */
     Y4ImageView * view = (Y4ImageView *)((UITapGestureRecognizer *)sender).view;
     
+    /* Se la cella appartiene alla plancia di sotto. */
     if(view.tag > 7) {
         
+        /* Avverto l'utente che quelle celle sono riservate. */
         [[[UIAlertView alloc] initWithTitle:@"IMPOSSIBILE COSTRUIRE"
                                     message:@"Tu puoi costruire solo nelle celle di sopra."
                                    delegate:self
@@ -155,31 +167,29 @@
         
     } else {
         
+        /* Se la cella è libera. */
         if(view.tag != self.delegate.idCentroDelVillaggio &&
            view.tag != self.delegate.idCaserma) {
+            
+            /* Entro nel dettaglio di quella cella. */
             [view toggleImage];
-            /* Carico il ViewController della cella. */
             CellViewController * cell = nil;
             cell = [[CellViewController alloc] init];
             [cell setIdCell:view.tag];
             [self.navigationController pushViewController:cell animated:TRUE];
+            
         } else {
-            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ATTENZIONE!!"
-                                                             message:@"Cella già occupata"
-                                                            delegate:self
-                                                   cancelButtonTitle:@"Cancel"
-                                                   otherButtonTitles:@"OK", nil];
-            [alert show];
+            
+            /* Altrimentio avverto l'utente che la cella è occupata da un altro edificio. */
+            [[[UIAlertView alloc] initWithTitle:@"ATTENZIONE!!"
+                                        message:@"Cella già occupata"
+                                       delegate:self
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"OK", nil] show];
+            
         }
         
     }
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    
-    [super didReceiveMemoryWarning];
     
 }
 

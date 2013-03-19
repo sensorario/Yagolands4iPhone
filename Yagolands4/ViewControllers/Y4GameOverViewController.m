@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
     
     /* Mostro la label di questa cella. */
@@ -34,6 +35,7 @@
     } completion:^(BOOL finished) {
         exit(0);
     }];
+    
 }
 
 @end
