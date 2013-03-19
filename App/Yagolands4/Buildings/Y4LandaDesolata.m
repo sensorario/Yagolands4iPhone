@@ -12,17 +12,23 @@
 
 - (NSString *)getName
 {
+    
     return @"Landa Desolata";
+    
 }
 
 - (NSString *)getDescription
 {
+    
     return @"Questa è una terra di nessuno. Costruendo un edificio, ne divverrai il padrone.";
+    
 }
 
 - (NSString *)getLocation
 {
+    
     return @"Landa Desolata.";
+    
 }
 
 @end
