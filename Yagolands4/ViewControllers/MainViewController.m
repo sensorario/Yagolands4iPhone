@@ -151,21 +151,33 @@
     /* Recupero la view da caricare */
     Y4ImageView * view = (Y4ImageView *)((UITapGestureRecognizer *)sender).view;
     
-    if(view.tag != self.delegate.idCentroDelVillaggio &&
-       view.tag != self.delegate.idCaserma) {
-        [view toggleImage];
-        /* Carico il ViewController della cella. */
-        CellViewController * cell = nil;
-        cell = [[CellViewController alloc] init];
-        [cell setIdCell:view.tag];
-        [self.navigationController pushViewController:cell animated:TRUE];
+    if(view.tag > 7) {
+        
+        [[[UIAlertView alloc] initWithTitle:@"IMPOSSIBILE COSTRUIRE"
+                                    message:@"Tu puoi costruire solo nelle celle di sopra."
+                                   delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"OK", nil] show];
+        
     } else {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ATTENZIONE!!"
-                                                         message:@"Cella già occupata"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                               otherButtonTitles:@"OK", nil];
-        [alert show];
+        
+        if(view.tag != self.delegate.idCentroDelVillaggio &&
+           view.tag != self.delegate.idCaserma) {
+            [view toggleImage];
+            /* Carico il ViewController della cella. */
+            CellViewController * cell = nil;
+            cell = [[CellViewController alloc] init];
+            [cell setIdCell:view.tag];
+            [self.navigationController pushViewController:cell animated:TRUE];
+        } else {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"ATTENZIONE!!"
+                                                             message:@"Cella già occupata"
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancel"
+                                                   otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+        
     }
     
 }
