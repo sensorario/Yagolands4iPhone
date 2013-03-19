@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/MainViewController.m"
-         timestampString = "385283061.525199"
+         timestampString = "385397852.698161"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "-viewWillAppear:"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "-initWithNibName:bundle:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,11 +34,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "385361426.132753"
+         timestampString = "385397852.698161"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "246"
-         endingLineNumber = "246"
+         startingLineNumber = "228"
+         endingLineNumber = "228"
+         landmarkName = "-costruisciCentroDelVillaggio"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Yagolands4/ViewControllers/CellViewController.m"
+         timestampString = "385397852.698161"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "240"
+         endingLineNumber = "240"
          landmarkName = "-costruisciCaserma"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,25 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "385361426.132753"
+         timestampString = "385391854.472405"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "258"
-         endingLineNumber = "258"
-         landmarkName = "-threadCostruisciCaserma:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Yagolands4/ViewControllers/CellViewController.m"
-         timestampString = "385360961.963598"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "133"
-         endingLineNumber = "133"
-         landmarkName = "-viewDidLoad"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
+         landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

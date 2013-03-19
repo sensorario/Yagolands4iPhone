@@ -1,10 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "Y4AppDelegate.h"
+#import "Yagolands4ViewController.h"
 
-@interface StartToBuildViewController : UIViewController
+@interface StartToBuildViewController : Yagolands4ViewController
 
-@property (nonatomic, strong) Y4AppDelegate * delegate;
-
+/* Metodi per costruire gli edifici. */
 - (void)startToBuildCentroDelVillaggio;
 - (void)startToBuildCaserma;
 

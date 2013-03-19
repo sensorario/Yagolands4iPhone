@@ -1,8 +1,3 @@
-/**
- * Qui è possibile vedere il dettaglio della cella. In basso, saranno visibili
- * i bottoni degli edifici che si possono costruire.
- */
-
 #import "CellViewController.h"
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
@@ -21,11 +16,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
-    }
-    return self;
+    /* Richiamo il costruttore per avere il delegate. */
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
 }
 
@@ -92,21 +84,19 @@
         }
     }
     
-    if([self.delegate giocoFinito]==YES) {
-        
-            //Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
-            //self.delegate.window.rootViewController = controller;
-        
-    } else {
+    if([self.delegate giocoFinito]==NO) {
     
+        /* Mostro l'interfaccia. */
         [self mostraTestiDescrittivi];
         [self mostroAzioniDisponibili];
         
+        /* Imposto i messaggi di default di una cella (landa desolata). */
         Y4LandaDesolata * landaDesolata = [[Y4LandaDesolata alloc] init];
         [self setTitle:[landaDesolata getName]];
         [((UITextView *)[self.view viewWithTag:102]) setText:[landaDesolata getLocation]];
         [((UITextView *)[self.view viewWithTag:103]) setText:[landaDesolata getDescription]];
         
+        /* Se mi trovo nel centro del villaggio sostituisco i testi. */
         if(self.delegate.idCentroDelVillaggio && (self.delegate.idCentroDelVillaggio) == self.idCell) {
             Y4CentroDelVillaggio * centro = [[Y4CentroDelVillaggio alloc] init];
             [self setTitle:[centro getName]];
@@ -114,6 +104,7 @@
             [((UITextView *)[self.view viewWithTag:103]) setText:[centro getDescription]];
         }
         
+        /* Se mi trovo nella caserma sostituisco i testi. */
         if(self.delegate.idCaserma && (self.delegate.idCaserma) == self.idCell) {
             Y4Caserma * caserma = [[Y4Caserma alloc] init];
             [self setTitle:[caserma getName]];
@@ -130,22 +121,17 @@
     
     [super viewDidLoad];
     
+    /* Mostro la label che indica gli edifici in costruzione. */
     self.labelInContruzione = [[UILabel alloc] initWithFrame:CGRectMake(20,360,280,40)];
     [self.labelInContruzione setTextAlignment:NSTextAlignmentLeft];
     [self.labelInContruzione setTag:101];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    
-    [super didReceiveMemoryWarning];
-    
-}
-
 - (void)mostraTestiDescrittivi
 {
     
+    /* Disegno le label del ViewController. */
     [self showLabeldLandaDesolata];
     [self showDescrizioneLandaDesolata];
     
@@ -156,21 +142,25 @@
     
     [self showLabelPuoiCostruire];
     
-    /* Centro del Villaggio. */
+    /* Mostro il bottone del centro del villaggio. */
     if([self centroDelVillaggionNotExists]) {
         [self mostraBottonePerCostruireIlCentroDelVillaggio];
     }
+    
+    /* Rimuovo bottoni se è in costruzione */
     if((int)self.delegate.timeLeftToBuildCentroDelVillaggio > 0) {
         [self removeButtonForBuildCentroDelVillaggio];
         [self showLabelCentroDelVillaggioInCostruzione];
     }
     
-    /* Caserma. */
+    /* Mostro il bottone della caserma. */
     if([self centroDelVillaggionExists] && [self isCentroDelVillaggioCostruito]) {
         if(!(self.delegate.idCaserma > 0)) {
             [self mostraBottonePerCostruireLaCaserma];
         }
     }
+    
+    /* Rimuovo bottoni se è in costruzione */
     if ((int)self.delegate.timeLeftToBuildCaserma > 0) {
         [self removeButtonForBuildCaserma];
         [self showLabelCasermaInCostruzione];
@@ -181,20 +171,15 @@
 - (void)threadSfidante
 {
     
-    NSLog(@"Avanzo di uno gli step dello sfidante");
+    /* Da quanti secondi è stato attivato il bot. */
+    self.delegate.numeroInterazioni = (int)self.delegate.numeroInterazioni + 1;
+    NSLog(@"Iterazione numero %d", (int)self.delegate.numeroInterazioni);
     
-    /*
-     
-     if ho costruito il centro del villaggio?
-         ho costruito la caserma?
-             mostro la schermata di game over: ha vinto l'iPhone!
-         else
-             allora la costruisco
-     else
-         allora lo costruisco
-     end if
-     
-     */
+    /* Il gioco termina allo scadere dei 20 secondi. */
+    if((int)self.delegate.numeroInterazioni == 20) {
+        [self.timerSfidante invalidate];
+        [self.delegate gameOver];
+    }
     
 }
 
@@ -203,6 +188,7 @@
 - (void)showDescrizioneLandaDesolata
 {
     
+    /* Mostro la descrizione di questa cella. */
     UILabel * labelDescrizione = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 280, 60)];
     [labelDescrizione setNumberOfLines:4];
     [labelDescrizione setTextAlignment:NSTextAlignmentCenter];
@@ -215,6 +201,7 @@
 - (void)showLabeldLandaDesolata
 {
     
+    /* Mostro il titolo di questa cella. */
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
     [label setBackgroundColor:[UIColor greenColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
@@ -227,12 +214,14 @@
 - (void)costruisciCentroDelVillaggio
 {
     
-    self.timerSfidante = [NSTimer scheduledTimerWithTimeInterval:10.0
+    /* Faccio partire il thread del bot. */
+    self.timerSfidante = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                           target:self
                                                         selector:@selector(threadSfidante)
                                                         userInfo:nil
                                                          repeats:YES];
     
+    /* Inizio a costruire il centro del villaggio. */
     [self startTimerToBuildCentroDelVillaggio];
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
     self.delegate.idCentroDelVillaggio = !self.delegate.idCentroDelVillaggio ? self.idCell : 0;
@@ -280,8 +269,7 @@
         [theTimer invalidate];
         theTimer = nil;
         
-        Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
-        self.delegate.window.rootViewController = controller;
+        [self.delegate endGame];
         
         [self.delegate setHoChiusoLaFinestra:NO];
         
@@ -353,7 +341,8 @@
 
 - (void)startTimerToBuildCentroDelVillaggio
 {
-    
+ 
+    /* Faccio partire il thread di costruzione del centro del villaggio. */
     self.timerCentroDelVillaggio = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                                     target:self
                                                                   selector:@selector(threadCostruisciCentroDelVillaggio:)
@@ -365,6 +354,7 @@
 - (void)startTimerToBuildCaserma
 {
     
+    /* Faccio partire il thread di costruzione della caserma. */
     self.timerCaserma = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                          target:self
                                                        selector:@selector(threadCostruisciCaserma:)
@@ -376,6 +366,7 @@
 - (BOOL)isCentroDelVillaggioCostruito
 {
     
+    /* Se il tempo di costruzione è <= 0, allora l'edificio è stato già costruito. */
     return self.delegate.timeLeftToBuildCentroDelVillaggio <= 0;
     
 }
@@ -383,6 +374,7 @@
 - (BOOL)isCasermaCostruita
 {
     
+    /* Se il tempo rimasto è minore o uguale a zero, allora è stato costruito. */
     return self.delegate.timeLeftToBuildCaserma <= 0;
     
 }
@@ -390,6 +382,7 @@
 - (BOOL)buttonToBuildCentroDelVillaggioExists
 {
     
+    /* Mi dice se il bottone esiste o meno. */
     return self.aButton != nil;
     
 }
@@ -397,6 +390,7 @@
 - (BOOL)buttonToBuildCasermaExists
 {
     
+    /* Mi dice se il bottone esiste o meno. */
     return self.aButtonToBuildCaserma != nil;
     
 }
@@ -404,6 +398,7 @@
 - (void)removeButtonForBuildCentroDelVillaggio
 {
     
+    /* Rimuove il bottone dalla sua superview. */
     [self.aButton removeFromSuperview];
     self.aButton = nil;
     
@@ -412,6 +407,7 @@
 - (void)removeButtonForBuildCaserma
 {
     
+    /* Rimuove il bottone dalla sua superview. */
     [self.aButtonToBuildCaserma removeFromSuperview];
     self.aButtonToBuildCaserma = nil;
     
@@ -420,6 +416,7 @@
 - (void)showLabelCentroDelVillaggioInCostruzione
 {
     
+    /* Mostro la label del centro del villeggio che è in costruzione. */
     [self.view addSubview:self.labelInContruzione];
     
 }
@@ -427,6 +424,7 @@
 - (void)showLabelCasermaInCostruzione
 {
     
+    /* Motro la label della caserma che è in cotruzione. */
     [self.view addSubview:self.labelCasermaInContruzione];
     
 }
@@ -434,6 +432,7 @@
 - (void)mostraBottonePerCostruireIlCentroDelVillaggio
 {
     
+    /* Mostro il bottone per costuire il centro del villaggio */
     self.aButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButton setFrame:CGRectMake(20,360,280,40)];
     [self.aButton setTitle:@"Centro del Villaggio" forState:UIControlStateNormal];
@@ -445,6 +444,7 @@
 - (void)mostraBottonePerCostruireLaCaserma
 {
 
+    /* Mostro il bottone per costruire la caserma. */
     self.aButtonToBuildCaserma = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.aButtonToBuildCaserma setFrame:CGRectMake(20,360,280,40)];
     [self.aButtonToBuildCaserma setTitle:@"Caserma" forState:UIControlStateNormal];
@@ -455,7 +455,8 @@
 
 - (BOOL)centroDelVillaggionNotExists
 {
-    
+ 
+    /* Dico se il centro del villaggio esiste o meno. */
     return self.delegate.booCentroDelVillaggio == 0;
     
 }
@@ -463,6 +464,7 @@
 - (BOOL)centroDelVillaggionExists
 {
     
+    /* Mostro se il centro del villaggio esiste o meno. */
     return ![self centroDelVillaggionNotExists];
     
 }
@@ -470,9 +472,8 @@
 - (BOOL)possoCostruireLaCaserma
 {
     
-    return
-    [self centroDelVillaggionExists] &&
-    [self isCentroDelVillaggioCostruito];
+    /* Posso o meno costruire la caserma? */
+    return [self centroDelVillaggionExists] && [self isCentroDelVillaggioCostruito];
     
 }
 

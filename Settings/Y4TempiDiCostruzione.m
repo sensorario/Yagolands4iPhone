@@ -15,8 +15,8 @@
     
     self = [super init];
     if (self) {
-        [self setCentroDelvillaggio:7];
-        [self setCaserma:8];
+        [self setCentroDelvillaggio:4];
+        [self setCaserma:4];
     }
     return self;
     
@@ -24,8 +24,7 @@
 
 - (int)getTempoCentroDelvillaggio
 {
-    
-    NSLog(@"Recupero il tempo di costruzione del Centro del Villaggio.");
+
     return self.centroDelvillaggio;
 
 }

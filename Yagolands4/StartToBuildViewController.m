@@ -1,7 +1,3 @@
-/**
- * Questa è la schermata che mostra l'avvio delle costruzioni.
- */
-
 #import "StartToBuildViewController.h"
 #import "Y4AppDelegate.h"
 #import "Y4TempiDiCostruzione.h"
@@ -15,6 +11,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
+    /* Richiamo il costruttore per avere il delegate. */
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
@@ -94,13 +91,6 @@
     
     [super viewDidLoad];
     [self mostraTestiDescrittivi];
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    
-    [super didReceiveMemoryWarning];
     
 }
 

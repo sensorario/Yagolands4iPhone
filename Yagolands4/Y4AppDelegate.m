@@ -1,7 +1,33 @@
 #import "Y4AppDelegate.h"
 #import "MainViewController.h"
+#import "Y4EndGameViewController.h"
+#import "Y4GameOverViewController.h"
 
 @implementation Y4AppDelegate
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    /* Inizializzo l'applicazione. */
+    [self setBooCentroDelVillaggio:false];
+    [self setGiocoFinito:NO];
+    [self setEdificioInCostruzione:NO];
+    [self setIdEdificioCorrente:nil];
+    [self setHoChiusoLaFinestra:NO];
+    [self setNumeroInterazioni:0];
+
+    /* Definisco il mio rootViewController. */
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+    
+}
+
+# pragma mark - Getter del tempo
 
 - (float)timeLeftToBuildCentroDelVillaggio
 {
@@ -13,39 +39,28 @@
 
 - (float)timeLeftToBuildCaserma
 {
+    
     NSDate * now = [[NSDate alloc] init];
     return [self.endJobCaserma timeIntervalSinceDate:now];
+    
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+# pragma mark - Fine gioco
+
+- (void)endGame
 {
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    /* Inizializzo l'app. */
-    [self setBooCentroDelVillaggio:false];
-    [self setGiocoFinito:NO];
-    [self setEdificioInCostruzione:NO];
-    [self setIdEdificioCorrente:nil];
-    [self setHoChiusoLaFinestra:NO];
-
-    /* Definisco il mio rootViewController. */
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
+    Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
+    self.window.rootViewController = controller;
     
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {}
-
-- (void)applicationWillTerminate:(UIApplication *)application {}
+- (void)gameOver
+{
+    
+    Y4GameOverViewController * controller = [[Y4GameOverViewController alloc] init];
+    self.window.rootViewController = controller;
+    
+}
 
 @end

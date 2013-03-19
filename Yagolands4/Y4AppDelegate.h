@@ -4,6 +4,9 @@
 
 @property (strong, nonatomic) UIWindow * window;
 
+/* Lo sfidante. */
+@property (nonatomic) NSInteger * numeroInterazioni;
+
 /* Variabili di gioco. */
 @property (nonatomic) BOOL giocoFinito;
 @property (nonatomic) BOOL edificioInCostruzione;
@@ -25,5 +28,7 @@
 /* Metodi. */
 - (float)timeLeftToBuildCentroDelVillaggio;
 - (float)timeLeftToBuildCaserma;
+- (void)endGame;
+- (void)gameOver;
 
 @end
