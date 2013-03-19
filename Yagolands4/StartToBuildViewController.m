@@ -14,6 +14,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
@@ -30,6 +31,7 @@
         }
     }
     return self;
+    
 }
 
 - (void)startToBuildCentroDelVillaggio
@@ -42,6 +44,12 @@
     /* Imposto il tempo di costruzione del centro del villaggio. */
     [self.delegate setEndJobCentroDelVillaggio:[NSDate dateWithTimeIntervalSinceNow:tempo]];
     [self.delegate setBooCentroDelVillaggio:true];
+    
+    /* Mostro il disegno dell'edificio. */
+    UIImage * image = [UIImage imageNamed:@"disegno_villaggio.png"];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+    [imageView setFrame:CGRectMake(20, 200, self.view.frame.size.width-40, 100)];
+    [self.view addSubview:imageView];
     
 }
 
@@ -73,6 +81,12 @@
     [self.delegate setEndJobCaserma:[NSDate dateWithTimeIntervalSinceNow:tempo]];
     [self.delegate setBooCaserma:true];
     
+    /* Mostro il disegno dell'edificio. */
+    UIImage * image = [UIImage imageNamed:@"disegno_caserma.png"];
+    UIImageView * imageView = [[UIImageView alloc] initWithImage:image];
+    [imageView setFrame:CGRectMake(20, 200, self.view.frame.size.width-40, 100)];
+    [self.view addSubview:imageView];
+    
 }
 
 - (void)viewDidLoad
@@ -85,12 +99,14 @@
 
 - (void)didReceiveMemoryWarning
 {
+    
     [super didReceiveMemoryWarning];
-        // Dispose of any resources that can be recreated.
+    
 }
 
 - (void)mostraTestiDescrittivi
 {
+    
     /* Mostro la label di questa cella. */
     UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 60)];
     [label setBackgroundColor:[UIColor greenColor]];
@@ -105,6 +121,7 @@
     [labelDescrizione setTextAlignment:NSTextAlignmentCenter];
     [labelDescrizione setText:@"Il centro del villaggio è la tua casa."];
     [self.view addSubview:labelDescrizione];
+    
 }
 
 @end
