@@ -1,5 +1,7 @@
 #import "Y4AppDelegate.h"
 #import "MainViewController.h"
+#import "Y4EndGameViewController.h"
+#import "Y4Y4GameOverViewController.h"
 
 @implementation Y4AppDelegate
 
@@ -28,6 +30,7 @@
     [self setEdificioInCostruzione:NO];
     [self setIdEdificioCorrente:nil];
     [self setHoChiusoLaFinestra:NO];
+    [self setNumeroInterazioni:0];
 
     /* Definisco il mio rootViewController. */
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MainViewController alloc] init]];
@@ -47,5 +50,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {}
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
+
+- (void)endGame
+{
+    
+    Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
+    self.window.rootViewController = controller;
+    
+}
+
+- (void)gameOver
+{
+    
+    Y4Y4GameOverViewController * controller = [[Y4Y4GameOverViewController alloc] init];
+    self.window.rootViewController = controller;
+    
+}
 
 @end

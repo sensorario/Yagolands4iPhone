@@ -181,7 +181,14 @@
 - (void)threadSfidante
 {
     
-    NSLog(@"Avanzo di uno gli step dello sfidante");
+    self.delegate.numeroInterazioni = (int)self.delegate.numeroInterazioni + 1;
+    NSLog(@"Iterazione numero %d", (int)self.delegate.numeroInterazioni);
+    
+    
+    if((int)self.delegate.numeroInterazioni == 10) {
+        [self.timerSfidante invalidate];
+        [self.delegate gameOver];
+    }
     
     /*
      
@@ -227,7 +234,7 @@
 - (void)costruisciCentroDelVillaggio
 {
     
-    self.timerSfidante = [NSTimer scheduledTimerWithTimeInterval:10.0
+    self.timerSfidante = [NSTimer scheduledTimerWithTimeInterval:2.0
                                                           target:self
                                                         selector:@selector(threadSfidante)
                                                         userInfo:nil
@@ -280,8 +287,7 @@
         [theTimer invalidate];
         theTimer = nil;
         
-        Y4EndGameViewController * controller = [[Y4EndGameViewController alloc] init];
-        self.delegate.window.rootViewController = controller;
+        [self.delegate endGame];
         
         [self.delegate setHoChiusoLaFinestra:NO];
         
