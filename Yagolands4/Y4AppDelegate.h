@@ -1,12 +1,5 @@
 #import <UIKit/UIKit.h>
 
-#define SENSO_DEBUG
-#ifdef SENSO_DEBUG
-    #define SENSO_LOG(str) NSLog(@"%s", str)
-#else
-    #define SENSO_LOG(str)
-#endif
-
 @interface Y4AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow * window;

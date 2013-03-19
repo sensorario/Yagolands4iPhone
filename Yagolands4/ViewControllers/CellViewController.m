@@ -178,6 +178,26 @@
     
 }
 
+- (void)threadSfidante
+{
+    
+    NSLog(@"Avanzo di uno gli step dello sfidante");
+    
+    /*
+     
+     if ho costruito il centro del villaggio?
+         ho costruito la caserma?
+             mostro la schermata di game over: ha vinto l'iPhone!
+         else
+             allora la costruisco
+     else
+         allora lo costruisco
+     end if
+     
+     */
+    
+}
+
 # pragma mark Utility methods
 
 - (void)showDescrizioneLandaDesolata
@@ -206,6 +226,12 @@
 
 - (void)costruisciCentroDelVillaggio
 {
+    
+    self.timerSfidante = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                                          target:self
+                                                        selector:@selector(threadSfidante)
+                                                        userInfo:nil
+                                                         repeats:YES];
     
     [self startTimerToBuildCentroDelVillaggio];
     StartToBuildViewController * controller = [[StartToBuildViewController alloc] init];
