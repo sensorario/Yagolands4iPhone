@@ -1,9 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "Y4AppDelegate.h"
+#import "Yagolands4ViewController.h"
 
-@interface StartToBuildViewController : UIViewController
-
-@property (nonatomic, strong) Y4AppDelegate * delegate;
+@interface StartToBuildViewController : Yagolands4ViewController
 
 - (void)startToBuildCentroDelVillaggio;
 - (void)startToBuildCaserma;

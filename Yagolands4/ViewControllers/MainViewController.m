@@ -1,8 +1,3 @@
-/**
- * Questa è la mappa di gioco. Qui è possibile vedere tutte le celle libere
- * e selezionarne una per costruirci sopra un edificio.
- */
-
 #import "MainViewController.h"
 #import "CellViewController.h"
 #import "Y4ImageView.h"
@@ -18,20 +13,19 @@
 @synthesize posizioneY;
 @synthesize identificatoreCella;
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self setTitle:@"Yagolands"];
-        [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
-    }
-    return self;
+    /* Richiamo il costruttore per avere il delegate. */
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    [self setTitle:@"Yagolands"];
     
     if(self.delegate.idCentroDelVillaggio > 0) {
         NSInteger tag = self.delegate.idCentroDelVillaggio;

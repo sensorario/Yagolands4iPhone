@@ -1,12 +1,11 @@
 #import <UIKit/UIKit.h>
 #import "Y4Coordinata.h"
-#import "Y4AppDelegate.h"
+#import "Yagolands4ViewController.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : Yagolands4ViewController
 
 @property (nonatomic) NSInteger posizioneX;
 @property (nonatomic) NSInteger posizioneY;
 @property (nonatomic) NSInteger identificatoreCella;
-@property (nonatomic, strong) Y4AppDelegate * delegate;
 
 @end

@@ -1,30 +1,16 @@
 #import "Y4AppDelegate.h"
 #import "MainViewController.h"
 #import "Y4EndGameViewController.h"
-#import "Y4Y4GameOverViewController.h"
+#import "Y4GameOverViewController.h"
 
 @implementation Y4AppDelegate
-
-- (float)timeLeftToBuildCentroDelVillaggio
-{
-    
-    NSDate * now = [[NSDate alloc] init];
-    return [self.endJobCentroDelVillaggio timeIntervalSinceDate:now];
-    
-}
-
-- (float)timeLeftToBuildCaserma
-{
-    NSDate * now = [[NSDate alloc] init];
-    return [self.endJobCaserma timeIntervalSinceDate:now];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    /* Inizializzo l'app. */
+    /* Inizializzo l'applicazione. */
     [self setBooCentroDelVillaggio:false];
     [self setGiocoFinito:NO];
     [self setEdificioInCostruzione:NO];
@@ -41,15 +27,25 @@
     
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {}
+# pragma mark - Getter del tempo
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {}
+- (float)timeLeftToBuildCentroDelVillaggio
+{
+    
+    NSDate * now = [[NSDate alloc] init];
+    return [self.endJobCentroDelVillaggio timeIntervalSinceDate:now];
+    
+}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {}
+- (float)timeLeftToBuildCaserma
+{
+    
+    NSDate * now = [[NSDate alloc] init];
+    return [self.endJobCaserma timeIntervalSinceDate:now];
+    
+}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {}
-
-- (void)applicationWillTerminate:(UIApplication *)application {}
+# pragma mark - Fine gioco
 
 - (void)endGame
 {
@@ -62,7 +58,7 @@
 - (void)gameOver
 {
     
-    Y4Y4GameOverViewController * controller = [[Y4Y4GameOverViewController alloc] init];
+    Y4GameOverViewController * controller = [[Y4GameOverViewController alloc] init];
     self.window.rootViewController = controller;
     
 }

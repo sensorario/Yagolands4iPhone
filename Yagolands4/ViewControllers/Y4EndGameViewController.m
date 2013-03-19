@@ -1,7 +1,3 @@
-/**
- * Questa è la schermata della fine del gioco.
- */
-
 #import "Y4EndGameViewController.h"
 
 @interface Y4EndGameViewController ()
@@ -12,11 +8,10 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        NSLog(@"Fine gioco");
-    }
-    return self;
+    
+    /* Richiamo il costruttore per avere il delegate. */
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
 }
 
 - (void)viewDidLoad
@@ -48,11 +43,6 @@
     } completion:^(BOOL finished) {
         exit(0);
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 @end

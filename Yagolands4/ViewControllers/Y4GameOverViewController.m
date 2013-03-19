@@ -1,27 +1,18 @@
-//
-//  Y4Y4GameOverViewController.m
-//  Yagolands4
-//
-//  Created by Simone Gentili on 19/03/13.
-//  Copyright (c) 2013 SENSORARIO. All rights reserved.
-//
-
-#import "Y4Y4GameOverViewController.h"
+#import "Y4GameOverViewController.h"
 #import "Y4AppDelegate.h"
 
-@interface Y4Y4GameOverViewController ()
+@interface Y4GameOverViewController ()
 
 @end
 
-@implementation Y4Y4GameOverViewController
+@implementation Y4GameOverViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self setDelegate:(Y4AppDelegate *)[[UIApplication sharedApplication] delegate]];
-    }
-    return self;
+    
+    /* Richiamo il costruttore per avere il delegate. */
+    return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+
 }
 
 - (void)viewDidLoad
@@ -43,12 +34,6 @@
     } completion:^(BOOL finished) {
         exit(0);
     }];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
