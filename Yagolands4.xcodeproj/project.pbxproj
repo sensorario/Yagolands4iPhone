@@ -7,25 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171A65ED16EDF53900A4CD5D /* Y4TempiDiCostruzione.m in Sources */ = {isa = PBXBuildFile; fileRef = 171A65EC16EDF53900A4CD5D /* Y4TempiDiCostruzione.m */; };
-		17205AC316F878C100DF34C7 /* Y4GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17205AC216F878C100DF34C7 /* Y4GameOverViewController.m */; };
-		17205AD516F89B7000DF34C7 /* Yagolands4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17205AD416F89B7000DF34C7 /* Yagolands4ViewController.m */; };
-		174B159E16F81CCE00D90698 /* disegno_caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 174B159C16F81CCE00D90698 /* disegno_caserma.png */; };
-		174B159F16F81CCE00D90698 /* disegno_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 174B159D16F81CCE00D90698 /* disegno_villaggio.png */; };
-		1768ADE716A8396F00009763 /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1768ADE616A8396F00009763 /* CellViewController.m */; };
-		176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176AE4C816A921E200BF523E /* StartToBuildViewController.m */; };
-		177374CB16E3799D00E88811 /* Y4LandaDesolata.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374CA16E3799D00E88811 /* Y4LandaDesolata.m */; };
-		177374D216E37CC700E88811 /* Y4CentroDelVillaggio.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */; };
-		177374D516E37EAB00E88811 /* Y4Caserma.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D416E37EAB00E88811 /* Y4Caserma.m */; };
-		177374D816E381B300E88811 /* Y4EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177374D716E381B300E88811 /* Y4EndGameViewController.m */; };
-		177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177EC56C16A304DF00D7FE62 /* Y4ImageView.m */; };
-		179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 179DEA5416A1EBB800C1AAA7 /* MainViewController.m */; };
+		176A1CCF16F8B7BA0012EB1D /* Y4Caserma.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CA916F8B7BA0012EB1D /* Y4Caserma.m */; };
+		176A1CD016F8B7BA0012EB1D /* Y4CentroDelVillaggio.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CAB16F8B7BA0012EB1D /* Y4CentroDelVillaggio.m */; };
+		176A1CD116F8B7BA0012EB1D /* Y4LandaDesolata.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CAD16F8B7BA0012EB1D /* Y4LandaDesolata.m */; };
+		176A1CD216F8B7BA0012EB1D /* Y4Coordinata.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CB016F8B7BA0012EB1D /* Y4Coordinata.m */; };
+		176A1CD316F8B7BA0012EB1D /* Y4ImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CB216F8B7BA0012EB1D /* Y4ImageView.m */; };
+		176A1CD416F8B7BA0012EB1D /* Y4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CB516F8B7BA0012EB1D /* Y4AppDelegate.m */; };
+		176A1CD516F8B7BA0012EB1D /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CB816F8B7BA0012EB1D /* caserma.png */; };
+		176A1CD616F8B7BA0012EB1D /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CB916F8B7BA0012EB1D /* cella-cliccata.png */; };
+		176A1CD716F8B7BA0012EB1D /* cella.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CBA16F8B7BA0012EB1D /* cella.png */; };
+		176A1CD816F8B7BA0012EB1D /* centro_del_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CBB16F8B7BA0012EB1D /* centro_del_villaggio.png */; };
+		176A1CD916F8B7BA0012EB1D /* disegno_caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CBC16F8B7BA0012EB1D /* disegno_caserma.png */; };
+		176A1CDA16F8B7BA0012EB1D /* disegno_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 176A1CBD16F8B7BA0012EB1D /* disegno_villaggio.png */; };
+		176A1CDB16F8B7BA0012EB1D /* Y4TempiDiCostruzione.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CC016F8B7BA0012EB1D /* Y4TempiDiCostruzione.m */; };
+		176A1CDC16F8B7BA0012EB1D /* CellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CC316F8B7BA0012EB1D /* CellViewController.m */; };
+		176A1CDD16F8B7BA0012EB1D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CC516F8B7BA0012EB1D /* MainViewController.m */; };
+		176A1CDE16F8B7BA0012EB1D /* StartToBuildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CC716F8B7BA0012EB1D /* StartToBuildViewController.m */; };
+		176A1CDF16F8B7BA0012EB1D /* Y4EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CC916F8B7BA0012EB1D /* Y4EndGameViewController.m */; };
+		176A1CE016F8B7BA0012EB1D /* Y4GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CCB16F8B7BA0012EB1D /* Y4GameOverViewController.m */; };
+		176A1CE116F8B7BA0012EB1D /* Yagolands4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 176A1CCE16F8B7BA0012EB1D /* Yagolands4ViewController.m */; };
 		17A2C2421686CD370078D4C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2411686CD370078D4C6 /* UIKit.framework */; };
 		17A2C2441686CD370078D4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2431686CD370078D4C6 /* Foundation.framework */; };
 		17A2C2461686CD370078D4C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2451686CD370078D4C6 /* CoreGraphics.framework */; };
 		17A2C24C1686CD370078D4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C24A1686CD370078D4C6 /* InfoPlist.strings */; };
 		17A2C24E1686CD370078D4C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C24D1686CD370078D4C6 /* main.m */; };
-		17A2C2521686CD370078D4C6 /* Y4AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */; };
 		17A2C2541686CD370078D4C6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2531686CD370078D4C6 /* Default.png */; };
 		17A2C2561686CD370078D4C6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2551686CD370078D4C6 /* Default@2x.png */; };
 		17A2C2581686CD370078D4C6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2571686CD370078D4C6 /* Default-568h@2x.png */; };
@@ -34,11 +39,6 @@
 		17A2C2621686CD370078D4C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2C2431686CD370078D4C6 /* Foundation.framework */; };
 		17A2C26A1686CD370078D4C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A2C2681686CD370078D4C6 /* InfoPlist.strings */; };
 		17A2C26D1686CD380078D4C6 /* Yagolands4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */; };
-		17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2C2771686CD910078D4C6 /* Y4Coordinata.m */; };
-		17C2E70516E3DFDE00EBA8D9 /* caserma.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70116E3DFDE00EBA8D9 /* caserma.png */; };
-		17C2E70616E3DFDE00EBA8D9 /* cella-cliccata.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */; };
-		17C2E70716E3DFDE00EBA8D9 /* cella.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70316E3DFDE00EBA8D9 /* cella.png */; };
-		17C2E70816E3DFDE00EBA8D9 /* centro_del_villaggio.png in Resources */ = {isa = PBXBuildFile; fileRef = 17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,30 +52,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		171A65EB16EDF53900A4CD5D /* Y4TempiDiCostruzione.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4TempiDiCostruzione.h; path = ../Settings/Y4TempiDiCostruzione.h; sourceTree = "<group>"; };
-		171A65EC16EDF53900A4CD5D /* Y4TempiDiCostruzione.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4TempiDiCostruzione.m; path = ../Settings/Y4TempiDiCostruzione.m; sourceTree = "<group>"; };
-		17205AC116F878C100DF34C7 /* Y4GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4GameOverViewController.h; path = ViewControllers/Y4GameOverViewController.h; sourceTree = "<group>"; };
-		17205AC216F878C100DF34C7 /* Y4GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4GameOverViewController.m; path = ViewControllers/Y4GameOverViewController.m; sourceTree = "<group>"; };
-		17205AD316F89B7000DF34C7 /* Yagolands4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yagolands4ViewController.h; sourceTree = "<group>"; };
-		17205AD416F89B7000DF34C7 /* Yagolands4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yagolands4ViewController.m; sourceTree = "<group>"; };
-		174B159C16F81CCE00D90698 /* disegno_caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = disegno_caserma.png; path = ../Images/disegno_caserma.png; sourceTree = "<group>"; };
-		174B159D16F81CCE00D90698 /* disegno_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = disegno_villaggio.png; path = ../Images/disegno_villaggio.png; sourceTree = "<group>"; };
-		1768ADE516A8396F00009763 /* CellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellViewController.h; path = ViewControllers/CellViewController.h; sourceTree = "<group>"; };
-		1768ADE616A8396F00009763 /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellViewController.m; path = ViewControllers/CellViewController.m; sourceTree = "<group>"; };
-		176AE4C716A921E200BF523E /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
-		176AE4C816A921E200BF523E /* StartToBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartToBuildViewController.m; sourceTree = "<group>"; };
-		177374C916E3799C00E88811 /* Y4LandaDesolata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4LandaDesolata.h; sourceTree = "<group>"; };
-		177374CA16E3799D00E88811 /* Y4LandaDesolata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4LandaDesolata.m; sourceTree = "<group>"; };
-		177374D016E37CC700E88811 /* Y4CentroDelVillaggio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4CentroDelVillaggio.h; path = ../Y4CentroDelVillaggio.h; sourceTree = "<group>"; };
-		177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4CentroDelVillaggio.m; path = ../Y4CentroDelVillaggio.m; sourceTree = "<group>"; };
-		177374D316E37EAB00E88811 /* Y4Caserma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4Caserma.h; path = ../Celle/Y4Caserma.h; sourceTree = "<group>"; };
-		177374D416E37EAB00E88811 /* Y4Caserma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4Caserma.m; path = ../Celle/Y4Caserma.m; sourceTree = "<group>"; };
-		177374D616E381B200E88811 /* Y4EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Y4EndGameViewController.h; path = ViewControllers/Y4EndGameViewController.h; sourceTree = "<group>"; };
-		177374D716E381B300E88811 /* Y4EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Y4EndGameViewController.m; path = ViewControllers/Y4EndGameViewController.m; sourceTree = "<group>"; };
-		177EC56B16A304DF00D7FE62 /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
-		177EC56C16A304DF00D7FE62 /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
-		179DEA5316A1EBB800C1AAA7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
-		179DEA5416A1EBB800C1AAA7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
+		176A1CA816F8B7BA0012EB1D /* Y4Caserma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4Caserma.h; sourceTree = "<group>"; };
+		176A1CA916F8B7BA0012EB1D /* Y4Caserma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4Caserma.m; sourceTree = "<group>"; };
+		176A1CAA16F8B7BA0012EB1D /* Y4CentroDelVillaggio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4CentroDelVillaggio.h; sourceTree = "<group>"; };
+		176A1CAB16F8B7BA0012EB1D /* Y4CentroDelVillaggio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4CentroDelVillaggio.m; sourceTree = "<group>"; };
+		176A1CAC16F8B7BA0012EB1D /* Y4LandaDesolata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4LandaDesolata.h; sourceTree = "<group>"; };
+		176A1CAD16F8B7BA0012EB1D /* Y4LandaDesolata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4LandaDesolata.m; sourceTree = "<group>"; };
+		176A1CAF16F8B7BA0012EB1D /* Y4Coordinata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4Coordinata.h; sourceTree = "<group>"; };
+		176A1CB016F8B7BA0012EB1D /* Y4Coordinata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4Coordinata.m; sourceTree = "<group>"; };
+		176A1CB116F8B7BA0012EB1D /* Y4ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4ImageView.h; sourceTree = "<group>"; };
+		176A1CB216F8B7BA0012EB1D /* Y4ImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4ImageView.m; sourceTree = "<group>"; };
+		176A1CB416F8B7BA0012EB1D /* Y4AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4AppDelegate.h; sourceTree = "<group>"; };
+		176A1CB516F8B7BA0012EB1D /* Y4AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4AppDelegate.m; sourceTree = "<group>"; };
+		176A1CB816F8B7BA0012EB1D /* caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caserma.png; sourceTree = "<group>"; };
+		176A1CB916F8B7BA0012EB1D /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cella-cliccata.png"; sourceTree = "<group>"; };
+		176A1CBA16F8B7BA0012EB1D /* cella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cella.png; sourceTree = "<group>"; };
+		176A1CBB16F8B7BA0012EB1D /* centro_del_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centro_del_villaggio.png; sourceTree = "<group>"; };
+		176A1CBC16F8B7BA0012EB1D /* disegno_caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disegno_caserma.png; sourceTree = "<group>"; };
+		176A1CBD16F8B7BA0012EB1D /* disegno_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disegno_villaggio.png; sourceTree = "<group>"; };
+		176A1CBF16F8B7BA0012EB1D /* Y4TempiDiCostruzione.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4TempiDiCostruzione.h; sourceTree = "<group>"; };
+		176A1CC016F8B7BA0012EB1D /* Y4TempiDiCostruzione.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4TempiDiCostruzione.m; sourceTree = "<group>"; };
+		176A1CC216F8B7BA0012EB1D /* CellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellViewController.h; sourceTree = "<group>"; };
+		176A1CC316F8B7BA0012EB1D /* CellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellViewController.m; sourceTree = "<group>"; };
+		176A1CC416F8B7BA0012EB1D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		176A1CC516F8B7BA0012EB1D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		176A1CC616F8B7BA0012EB1D /* StartToBuildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartToBuildViewController.h; sourceTree = "<group>"; };
+		176A1CC716F8B7BA0012EB1D /* StartToBuildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartToBuildViewController.m; sourceTree = "<group>"; };
+		176A1CC816F8B7BA0012EB1D /* Y4EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4EndGameViewController.h; sourceTree = "<group>"; };
+		176A1CC916F8B7BA0012EB1D /* Y4EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4EndGameViewController.m; sourceTree = "<group>"; };
+		176A1CCA16F8B7BA0012EB1D /* Y4GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4GameOverViewController.h; sourceTree = "<group>"; };
+		176A1CCB16F8B7BA0012EB1D /* Y4GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4GameOverViewController.m; sourceTree = "<group>"; };
+		176A1CCD16F8B7BA0012EB1D /* Yagolands4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yagolands4ViewController.h; sourceTree = "<group>"; };
+		176A1CCE16F8B7BA0012EB1D /* Yagolands4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yagolands4ViewController.m; sourceTree = "<group>"; };
 		17A2C23D1686CD370078D4C6 /* Yagolands4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yagolands4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A2C2411686CD370078D4C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17A2C2431686CD370078D4C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,8 +92,6 @@
 		17A2C24B1686CD370078D4C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17A2C24D1686CD370078D4C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17A2C24F1686CD370078D4C6 /* Yagolands4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Yagolands4-Prefix.pch"; sourceTree = "<group>"; };
-		17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Y4AppDelegate.h; sourceTree = "<group>"; };
-		17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Y4AppDelegate.m; sourceTree = "<group>"; };
 		17A2C2531686CD370078D4C6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		17A2C2551686CD370078D4C6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		17A2C2571686CD370078D4C6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -95,12 +101,6 @@
 		17A2C2691686CD370078D4C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17A2C26B1686CD380078D4C6 /* Yagolands4Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yagolands4Tests.h; sourceTree = "<group>"; };
 		17A2C26C1686CD380078D4C6 /* Yagolands4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Yagolands4Tests.m; sourceTree = "<group>"; };
-		17A2C2761686CD910078D4C6 /* Y4Coordinata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y4Coordinata.h; sourceTree = "<group>"; };
-		17A2C2771686CD910078D4C6 /* Y4Coordinata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y4Coordinata.m; sourceTree = "<group>"; };
-		17C2E70116E3DFDE00EBA8D9 /* caserma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = caserma.png; path = ../Images/caserma.png; sourceTree = "<group>"; };
-		17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cella-cliccata.png"; path = "../Images/cella-cliccata.png"; sourceTree = "<group>"; };
-		17C2E70316E3DFDE00EBA8D9 /* cella.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cella.png; path = ../Images/cella.png; sourceTree = "<group>"; };
-		17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = centro_del_villaggio.png; path = ../Images/centro_del_villaggio.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,114 +127,122 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17205AC416F8996300DF34C7 /* Buildings */ = {
+		176A1CA516F8B7BA0012EB1D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				177374D316E37EAB00E88811 /* Y4Caserma.h */,
-				177374D416E37EAB00E88811 /* Y4Caserma.m */,
-				177374C916E3799C00E88811 /* Y4LandaDesolata.h */,
-				177374CA16E3799D00E88811 /* Y4LandaDesolata.m */,
-				177374D016E37CC700E88811 /* Y4CentroDelVillaggio.h */,
-				177374D116E37CC700E88811 /* Y4CentroDelVillaggio.m */,
+				176A1CA616F8B7BA0012EB1D /* Yagolands4 */,
 			);
-			name = Buildings;
+			path = App;
 			sourceTree = "<group>";
 		};
-		17205AC516F8997600DF34C7 /* Images */ = {
+		176A1CA616F8B7BA0012EB1D /* Yagolands4 */ = {
 			isa = PBXGroup;
 			children = (
-				174B159C16F81CCE00D90698 /* disegno_caserma.png */,
-				174B159D16F81CCE00D90698 /* disegno_villaggio.png */,
-				17C2E70116E3DFDE00EBA8D9 /* caserma.png */,
-				17C2E70216E3DFDE00EBA8D9 /* cella-cliccata.png */,
-				17C2E70316E3DFDE00EBA8D9 /* cella.png */,
-				17C2E70416E3DFDE00EBA8D9 /* centro_del_villaggio.png */,
+				176A1CA716F8B7BA0012EB1D /* Buildings */,
+				176A1CAE16F8B7BA0012EB1D /* Components */,
+				176A1CB316F8B7BA0012EB1D /* Delegate */,
+				176A1CB616F8B7BA0012EB1D /* Resources */,
+				176A1CBE16F8B7BA0012EB1D /* Settings */,
+				176A1CC116F8B7BA0012EB1D /* ViewControllers */,
 			);
-			name = Images;
+			path = Yagolands4;
 			sourceTree = "<group>";
 		};
-		17205AC616F899B200DF34C7 /* Components */ = {
+		176A1CA716F8B7BA0012EB1D /* Buildings */ = {
 			isa = PBXGroup;
 			children = (
-				177EC56B16A304DF00D7FE62 /* Y4ImageView.h */,
-				177EC56C16A304DF00D7FE62 /* Y4ImageView.m */,
-				17A2C2761686CD910078D4C6 /* Y4Coordinata.h */,
-				17A2C2771686CD910078D4C6 /* Y4Coordinata.m */,
+				176A1CA816F8B7BA0012EB1D /* Y4Caserma.h */,
+				176A1CA916F8B7BA0012EB1D /* Y4Caserma.m */,
+				176A1CAA16F8B7BA0012EB1D /* Y4CentroDelVillaggio.h */,
+				176A1CAB16F8B7BA0012EB1D /* Y4CentroDelVillaggio.m */,
+				176A1CAC16F8B7BA0012EB1D /* Y4LandaDesolata.h */,
+				176A1CAD16F8B7BA0012EB1D /* Y4LandaDesolata.m */,
 			);
-			name = Components;
+			path = Buildings;
 			sourceTree = "<group>";
 		};
-		17205AC716F899BA00DF34C7 /* Delegate */ = {
+		176A1CAE16F8B7BA0012EB1D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				17A2C2501686CD370078D4C6 /* Y4AppDelegate.h */,
-				17A2C2511686CD370078D4C6 /* Y4AppDelegate.m */,
+				176A1CAF16F8B7BA0012EB1D /* Y4Coordinata.h */,
+				176A1CB016F8B7BA0012EB1D /* Y4Coordinata.m */,
+				176A1CB116F8B7BA0012EB1D /* Y4ImageView.h */,
+				176A1CB216F8B7BA0012EB1D /* Y4ImageView.m */,
 			);
-			name = Delegate;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		17205AC816F899CB00DF34C7 /* ViewControllers */ = {
+		176A1CB316F8B7BA0012EB1D /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				1768ADE516A8396F00009763 /* CellViewController.h */,
-				1768ADE616A8396F00009763 /* CellViewController.m */,
-				179DEA5316A1EBB800C1AAA7 /* MainViewController.h */,
-				179DEA5416A1EBB800C1AAA7 /* MainViewController.m */,
-				176AE4C716A921E200BF523E /* StartToBuildViewController.h */,
-				176AE4C816A921E200BF523E /* StartToBuildViewController.m */,
-				177374D616E381B200E88811 /* Y4EndGameViewController.h */,
-				177374D716E381B300E88811 /* Y4EndGameViewController.m */,
-				17205AC116F878C100DF34C7 /* Y4GameOverViewController.h */,
-				17205AC216F878C100DF34C7 /* Y4GameOverViewController.m */,
-				17205AD616F8A6DD00DF34C7 /* Yagolands4 */,
+				176A1CB416F8B7BA0012EB1D /* Y4AppDelegate.h */,
+				176A1CB516F8B7BA0012EB1D /* Y4AppDelegate.m */,
 			);
-			name = ViewControllers;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
-		17205AC916F899EC00DF34C7 /* Settings */ = {
+		176A1CB616F8B7BA0012EB1D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				171A65EB16EDF53900A4CD5D /* Y4TempiDiCostruzione.h */,
-				171A65EC16EDF53900A4CD5D /* Y4TempiDiCostruzione.m */,
+				176A1CB716F8B7BA0012EB1D /* Images */,
 			);
-			name = Settings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		17205ACB16F89A6300DF34C7 /* Resources */ = {
+		176A1CB716F8B7BA0012EB1D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				17205AC516F8997600DF34C7 /* Images */,
+				176A1CB816F8B7BA0012EB1D /* caserma.png */,
+				176A1CB916F8B7BA0012EB1D /* cella-cliccata.png */,
+				176A1CBA16F8B7BA0012EB1D /* cella.png */,
+				176A1CBB16F8B7BA0012EB1D /* centro_del_villaggio.png */,
+				176A1CBC16F8B7BA0012EB1D /* disegno_caserma.png */,
+				176A1CBD16F8B7BA0012EB1D /* disegno_villaggio.png */,
 			);
-			name = Resources;
+			path = Images;
 			sourceTree = "<group>";
 		};
-		17205ACE16F89AC900DF34C7 /* Yagolands4 */ = {
+		176A1CBE16F8B7BA0012EB1D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				17205AC816F899CB00DF34C7 /* ViewControllers */,
-				17205AC716F899BA00DF34C7 /* Delegate */,
-				17205AC616F899B200DF34C7 /* Components */,
-				17205AC916F899EC00DF34C7 /* Settings */,
-				17205AC416F8996300DF34C7 /* Buildings */,
-				17205ACB16F89A6300DF34C7 /* Resources */,
+				176A1CBF16F8B7BA0012EB1D /* Y4TempiDiCostruzione.h */,
+				176A1CC016F8B7BA0012EB1D /* Y4TempiDiCostruzione.m */,
 			);
-			name = Yagolands4;
+			path = Settings;
 			sourceTree = "<group>";
 		};
-		17205AD616F8A6DD00DF34C7 /* Yagolands4 */ = {
+		176A1CC116F8B7BA0012EB1D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				17205AD316F89B7000DF34C7 /* Yagolands4ViewController.h */,
-				17205AD416F89B7000DF34C7 /* Yagolands4ViewController.m */,
+				176A1CC216F8B7BA0012EB1D /* CellViewController.h */,
+				176A1CC316F8B7BA0012EB1D /* CellViewController.m */,
+				176A1CC416F8B7BA0012EB1D /* MainViewController.h */,
+				176A1CC516F8B7BA0012EB1D /* MainViewController.m */,
+				176A1CC616F8B7BA0012EB1D /* StartToBuildViewController.h */,
+				176A1CC716F8B7BA0012EB1D /* StartToBuildViewController.m */,
+				176A1CC816F8B7BA0012EB1D /* Y4EndGameViewController.h */,
+				176A1CC916F8B7BA0012EB1D /* Y4EndGameViewController.m */,
+				176A1CCA16F8B7BA0012EB1D /* Y4GameOverViewController.h */,
+				176A1CCB16F8B7BA0012EB1D /* Y4GameOverViewController.m */,
+				176A1CCC16F8B7BA0012EB1D /* Yagolands4 */,
 			);
-			name = Yagolands4;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		176A1CCC16F8B7BA0012EB1D /* Yagolands4 */ = {
+			isa = PBXGroup;
+			children = (
+				176A1CCD16F8B7BA0012EB1D /* Yagolands4ViewController.h */,
+				176A1CCE16F8B7BA0012EB1D /* Yagolands4ViewController.m */,
+			);
+			path = Yagolands4;
 			sourceTree = "<group>";
 		};
 		17A2C2321686CD370078D4C6 = {
 			isa = PBXGroup;
 			children = (
+				176A1CA516F8B7BA0012EB1D /* App */,
 				17A2C2481686CD370078D4C6 /* Supporting Files */,
-				17A2C2471686CD370078D4C6 /* App */,
 				17A2C2651686CD370078D4C6 /* Yagolands4Tests */,
 				17A2C2401686CD370078D4C6 /* Frameworks */,
 				17A2C23E1686CD370078D4C6 /* Products */,
@@ -259,15 +267,6 @@
 				17A2C25F1686CD370078D4C6 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		17A2C2471686CD370078D4C6 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				17205ACE16F89AC900DF34C7 /* Yagolands4 */,
-			);
-			name = App;
-			path = Yagolands4;
 			sourceTree = "<group>";
 		};
 		17A2C2481686CD370078D4C6 /* Supporting Files */ = {
@@ -380,12 +379,12 @@
 				17A2C2541686CD370078D4C6 /* Default.png in Resources */,
 				17A2C2561686CD370078D4C6 /* Default@2x.png in Resources */,
 				17A2C2581686CD370078D4C6 /* Default-568h@2x.png in Resources */,
-				17C2E70516E3DFDE00EBA8D9 /* caserma.png in Resources */,
-				17C2E70616E3DFDE00EBA8D9 /* cella-cliccata.png in Resources */,
-				17C2E70716E3DFDE00EBA8D9 /* cella.png in Resources */,
-				17C2E70816E3DFDE00EBA8D9 /* centro_del_villaggio.png in Resources */,
-				174B159E16F81CCE00D90698 /* disegno_caserma.png in Resources */,
-				174B159F16F81CCE00D90698 /* disegno_villaggio.png in Resources */,
+				176A1CD516F8B7BA0012EB1D /* caserma.png in Resources */,
+				176A1CD616F8B7BA0012EB1D /* cella-cliccata.png in Resources */,
+				176A1CD716F8B7BA0012EB1D /* cella.png in Resources */,
+				176A1CD816F8B7BA0012EB1D /* centro_del_villaggio.png in Resources */,
+				176A1CD916F8B7BA0012EB1D /* disegno_caserma.png in Resources */,
+				176A1CDA16F8B7BA0012EB1D /* disegno_villaggio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,19 +420,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				17A2C24E1686CD370078D4C6 /* main.m in Sources */,
-				17A2C2521686CD370078D4C6 /* Y4AppDelegate.m in Sources */,
-				17A2C2781686CD910078D4C6 /* Y4Coordinata.m in Sources */,
-				179DEA5516A1EBB800C1AAA7 /* MainViewController.m in Sources */,
-				177EC56D16A304DF00D7FE62 /* Y4ImageView.m in Sources */,
-				1768ADE716A8396F00009763 /* CellViewController.m in Sources */,
-				176AE4C916A921E200BF523E /* StartToBuildViewController.m in Sources */,
-				177374CB16E3799D00E88811 /* Y4LandaDesolata.m in Sources */,
-				177374D216E37CC700E88811 /* Y4CentroDelVillaggio.m in Sources */,
-				177374D516E37EAB00E88811 /* Y4Caserma.m in Sources */,
-				177374D816E381B300E88811 /* Y4EndGameViewController.m in Sources */,
-				171A65ED16EDF53900A4CD5D /* Y4TempiDiCostruzione.m in Sources */,
-				17205AC316F878C100DF34C7 /* Y4GameOverViewController.m in Sources */,
-				17205AD516F89B7000DF34C7 /* Yagolands4ViewController.m in Sources */,
+				176A1CCF16F8B7BA0012EB1D /* Y4Caserma.m in Sources */,
+				176A1CD016F8B7BA0012EB1D /* Y4CentroDelVillaggio.m in Sources */,
+				176A1CD116F8B7BA0012EB1D /* Y4LandaDesolata.m in Sources */,
+				176A1CD216F8B7BA0012EB1D /* Y4Coordinata.m in Sources */,
+				176A1CD316F8B7BA0012EB1D /* Y4ImageView.m in Sources */,
+				176A1CD416F8B7BA0012EB1D /* Y4AppDelegate.m in Sources */,
+				176A1CDB16F8B7BA0012EB1D /* Y4TempiDiCostruzione.m in Sources */,
+				176A1CDC16F8B7BA0012EB1D /* CellViewController.m in Sources */,
+				176A1CDD16F8B7BA0012EB1D /* MainViewController.m in Sources */,
+				176A1CDE16F8B7BA0012EB1D /* StartToBuildViewController.m in Sources */,
+				176A1CDF16F8B7BA0012EB1D /* Y4EndGameViewController.m in Sources */,
+				176A1CE016F8B7BA0012EB1D /* Y4GameOverViewController.m in Sources */,
+				176A1CE116F8B7BA0012EB1D /* Yagolands4ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
